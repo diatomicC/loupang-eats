@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:zzk/pages/orderPage/order.dart';
 
+import 'pages/allergySelector/allergySelector.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -73,10 +75,10 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
+      body: Container(
+        padding: const EdgeInsets.all(16),
+        margin: const EdgeInsets.all(32),
+        child: ListView(
           // Column is also a layout widget. It takes a list of children and
           // arranges them vertically. By default, it sizes itself to fit its
           // children horizontally, and tries to be as tall as its parent.
@@ -90,27 +92,58 @@ class _MyHomePageState extends State<MyHomePage> {
           // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
           // action in the IDE, or press "p" in the console), to see the
           // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed thse button this many times:',
+            // make dropdown for 4 languages
+            DropdownButton<String>(
+              value: 'English',
+              items: <String>['English', 'Japanese', 'Chinese', 'Korean'].map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+              onChanged: (String? newValue) {
+                setState(() {
+                  // update language
+                });
+              },
             ),
-            Text(
-              '$_counter' + ' TIMESasdfadsfadfadsf',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            ElevatedButton(
-                onPressed: () {
-                  // run csv reader and
 
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => OrderPage()),
-                  );
-                },
-                child: Text('Go to Order Page')),
-            // show menu
-            Text(menu ?? ''),
+            Container(
+              padding: const EdgeInsets.all(16),
+              height: MediaQuery.of(context).size.height * 0.5,
+              decoration: BoxDecoration(
+                // border
+                border: Border.all(color: Colors.grey),
+                // border radius
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: AllergySelectorWidget(),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 32, 0, 16),
+              child: Text(
+                'When you' 're ready, click the button below to go to the order page.',
+              ),
+            ),
+            Container(
+              height: 60,
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    // border radius
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  onPressed: () {
+                    // run csv reader and
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => OrderPage()),
+                    );
+                  },
+                  child: Text('Go to Order Page')),
+            ),
           ],
         ),
       ),

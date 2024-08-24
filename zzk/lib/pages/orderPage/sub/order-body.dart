@@ -49,10 +49,13 @@ class SectionWidget extends StatelessWidget {
                 itemCount: filteredItems.length,
                 itemBuilder: (BuildContext context, int index) {
                   return ItemGridWidget(
-                    restaurantId: restaurantId,
-                    item: filteredItems[index],
-                    languageCode: languageCode,
-                  );
+                      restaurantId: restaurantId,
+                      item: filteredItems[index],
+                      languageCode: languageCode,
+                      receivedImage: Image.asset(
+                        'assets/images/${restaurantId}/${filteredItems[index].imageFileName}',
+                        fit: BoxFit.cover,
+                      ));
                 },
               )
             : ListView.builder(
@@ -64,6 +67,10 @@ class SectionWidget extends StatelessWidget {
                     item: filteredItems[index],
                     languageCode: languageCode,
                     restaurantId: restaurantId,
+                    receievedImage: Image.asset(
+                      'assets/images/${restaurantId}/${filteredItems[index].imageFileName}',
+                      fit: BoxFit.cover,
+                    ),
                   );
                 },
               ),
@@ -76,8 +83,9 @@ class ItemGridWidget extends StatelessWidget {
   final FoodItem item;
   final String restaurantId;
   final String languageCode;
+  final Image? receivedImage;
 
-  ItemGridWidget({required this.item, required this.languageCode, required this.restaurantId});
+  ItemGridWidget({required this.item, required this.languageCode, required this.restaurantId, this.receivedImage});
 
   @override
   Widget build(BuildContext context) {
@@ -90,6 +98,7 @@ class ItemGridWidget extends StatelessWidget {
                       foodItem: item,
                       languageCode: languageCode,
                       restaurantId: restaurantId,
+                      receivedImage: receivedImage,
                     )));
       },
       child: Card(
@@ -101,15 +110,18 @@ class ItemGridWidget extends StatelessWidget {
           children: [
             Container(
               height: 170,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  // find corresponding image file in local file
-                  image: Image.asset('assets/images/$restaurantId/${item.imageFileName}').image,
-                  onError: (exception, stackTrace) {
-                    print('Error loading image: $exception');
-                  },
-                  fit: BoxFit.cover,
-                ),
+              width: double.infinity,
+              child: Hero(
+                tag: 'restaurantId: ${restaurantId}, foodItemId: ${item.id}',
+                child: receivedImage ?? Text('No Image'),
+                transitionOnUserGestures: true,
+                // make the animation curve linear
+                createRectTween: (begin, end) {
+                  return RectTween(
+                    begin: begin,
+                    end: end,
+                  );
+                },
               ),
             ),
             Expanded(
@@ -118,15 +130,11 @@ class ItemGridWidget extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Hero(
-                      tag: 'foodItem-${item.name}',
-                      // transitionOnUserGestures: true,
-                      child: Text(
-                        item.name,
-                        style: Theme.of(context).textTheme.titleLarge,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
+                    Text(
+                      item.name,
+                      style: Theme.of(context).textTheme.titleLarge,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
                     SizedBox(height: 4),
                     Expanded(
@@ -170,8 +178,9 @@ class ItemListWidget extends StatelessWidget {
   final FoodItem item;
   final String languageCode;
   final String restaurantId;
+  final Image? receievedImage;
 
-  ItemListWidget({required this.item, required this.languageCode, required this.restaurantId});
+  ItemListWidget({required this.item, required this.languageCode, required this.restaurantId, this.receievedImage});
 
   @override
   Widget build(BuildContext context) {
@@ -186,20 +195,11 @@ class ItemListWidget extends StatelessWidget {
           // make the leading fit full size
           dense: true,
           contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 0),
-          leading: Hero(
-            tag: 'foodItem-${item.name}',
-            child: Container(
-              height: 170,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  // find corresponding image file in local file
-                  image: Image.asset('assets/images/$restaurantId/${item.imageFileName}').image,
-                  onError: (exception, stackTrace) {
-                    print('Error loading image: $exception');
-                  },
-                  fit: BoxFit.cover,
-                ),
-              ),
+          leading: Container(
+            height: 170,
+            child: Hero(
+              tag: 'restaurantId: ${restaurantId}, foodItemId: ${item.id}',
+              child: receievedImage ?? Text('No Image'),
             ),
           ),
           title: Padding(

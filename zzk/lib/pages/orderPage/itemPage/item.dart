@@ -6,12 +6,15 @@ class ItemPage extends StatefulWidget {
   final FoodItem foodItem;
   final String languageCode;
   final String restaurantId;
+  final Image? receivedImage;
 
   const ItemPage({
     Key? key,
     required this.foodItem,
     required this.languageCode,
     required this.restaurantId,
+    // receivedImage is optional
+    this.receivedImage,
   }) : super(key: key);
 
   @override
@@ -34,42 +37,38 @@ class _ItemPageState extends State<ItemPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Hero(
-          tag: 'foodItem-${widget.foodItem.name}',
-          child: Row(
-            children: [
-              Text(
-                widget.foodItem.name,
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
-              ),
-              IconButton(
-                icon: Icon(Icons.info_outline),
-                onPressed: () => _launchURL(widget.foodItem.name),
-              ),
-            ],
-          ),
+        title: Row(
+          children: [
+            Text(
+              widget.foodItem.name,
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                    fontWeight: FontWeight.bold,
+                  ),
+            ),
+            IconButton(
+              icon: Icon(Icons.info_outline),
+              onPressed: () => _launchURL(widget.foodItem.name),
+            ),
+          ],
         ),
       ),
       body: Column(
         children: [
-          Hero(
-            tag: 'foodItem-${widget.foodItem.name}',
-            child: Container(
-              width: double.infinity,
-              height: 300,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: Image.asset(
-                          'assets/images/${widget.restaurantId}/${widget.foodItem.imageFileName}')
-                      .image,
-                  onError: (exception, stackTrace) {
-                    print('Error loading image: $exception');
-                  },
-                  fit: BoxFit.cover,
-                ),
-              ),
+          // show image
+          Container(
+            height: 300,
+            width: double.infinity,
+            child: Hero(
+              tag: 'restaurantId: ${widget.restaurantId}, foodItemId: ${widget.foodItem.id}',
+              child: widget.receivedImage ?? Text('No Image'),
+              transitionOnUserGestures: true,
+              // make the animation curve linear
+              createRectTween: (begin, end) {
+                return RectTween(
+                  begin: begin,
+                  end: end,
+                );
+              },
             ),
           ),
 
