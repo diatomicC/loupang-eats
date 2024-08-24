@@ -13,6 +13,7 @@ class _OrderPageState extends State<OrderPage> {
   ScrollController _scrollController = ScrollController();
   double _opacity = 1.0;
   String _language = 'Chinese';
+  bool _isGridMode = false;
 
   @override
   void initState() {
@@ -41,6 +42,13 @@ class _OrderPageState extends State<OrderPage> {
   void _onLanguageChanged(String newLanguage) {
     setState(() {
       _language = newLanguage;
+    });
+  }
+
+  void _toggleViewMode() {
+    // New method to toggle between grid and list view
+    setState(() {
+      _isGridMode = !_isGridMode;
     });
   }
 
@@ -86,7 +94,8 @@ class _OrderPageState extends State<OrderPage> {
                               borderRadius: BorderRadius.circular(0),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black.withOpacity(0.5 * _opacity * _opacity),
+                                  color: Colors.black
+                                      .withOpacity(0.5 * _opacity * _opacity),
                                   spreadRadius: 5,
                                   blurRadius: 7,
                                   offset: Offset(0, 3),
@@ -130,6 +139,8 @@ class _OrderPageState extends State<OrderPage> {
                     sections: snapshot.data,
                     language: _language,
                     onLanguageChanged: _onLanguageChanged,
+                    isGridMode: _isGridMode,
+                    onToggleViewMode: _toggleViewMode,
                   ),
                 ),
             ],
@@ -144,12 +155,16 @@ class OrderPageBody extends StatelessWidget {
   final List<FoodSection> sections;
   final String language;
   final Function(String) onLanguageChanged;
+  final bool isGridMode;
+  final VoidCallback onToggleViewMode;
 
   OrderPageBody({
     Key? key,
     required this.sections,
     required this.language,
     required this.onLanguageChanged,
+    required this.isGridMode,
+    required this.onToggleViewMode,
   }) : super(key: key);
 
   final Map<String, String> languageCodeMap = {
@@ -165,35 +180,50 @@ class OrderPageBody extends StatelessWidget {
 
     return Column(
       children: [
-        Container(
-          alignment: Alignment.centerLeft,
+        Padding(
           padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.grey),
-              borderRadius: BorderRadius.circular(5),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text('Language: ', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-                DropdownButton<String>(
-                  value: language,
-                  items: <String>['English', 'Korean', 'Chinese', 'Japanese'].map((String value) {
-                    return DropdownMenuItem<String>(
-                      value: value,
-                      child: Text(value),
-                    );
-                  }).toList(),
-                  onChanged: (String? value) {
-                    if (value != null) {
-                      onLanguageChanged(value);
-                    }
-                  },
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey),
+                  borderRadius: BorderRadius.circular(5),
                 ),
-              ],
-            ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text('Language: ',
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.bold)),
+                    DropdownButton<String>(
+                      value: language,
+                      items: <String>[
+                        'English',
+                        'Korean',
+                        'Chinese',
+                        'Japanese'
+                      ].map((String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        );
+                      }).toList(),
+                      onChanged: (String? value) {
+                        if (value != null) {
+                          onLanguageChanged(value);
+                        }
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              IconButton(
+                icon: Icon(isGridMode ? Icons.list : Icons.grid_view),
+                onPressed: onToggleViewMode,
+              ),
+            ],
           ),
         ),
         Divider(
@@ -205,7 +235,10 @@ class OrderPageBody extends StatelessWidget {
           physics: NeverScrollableScrollPhysics(),
           itemCount: sections.length,
           itemBuilder: (BuildContext context, int index) {
-            return SectionWidget(section: sections[index], languageCode: languageCode);
+            return SectionWidget(
+                section: sections[index],
+                languageCode: languageCode,
+                isGridMode: isGridMode);
           },
         ),
       ],

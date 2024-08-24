@@ -5,9 +5,12 @@ class SectionWidget extends StatelessWidget {
   final FoodSection section;
   final String languageCode;
 
-  final bool isGridMode = true;
+  final bool isGridMode;
 
-  SectionWidget({required this.section, required this.languageCode});
+  SectionWidget(
+      {required this.section,
+      required this.languageCode,
+      required this.isGridMode});
 
   @override
   Widget build(BuildContext context) {
