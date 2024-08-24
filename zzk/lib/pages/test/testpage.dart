@@ -20,8 +20,8 @@ class _TestPageState extends State<TestPage> {
       ),
       body: ChatGptFutureWidget(
         apiUrl: 'https://api.openai.com/v1/chat/completions',
-        apiKey: 'sk-proj-4ZrRXzz155k9-CrCsad9suLaMpeHLF-5scZpKUtUFc9mpwAPDJ0lyMTf1rT3Bl' +
-            'bkFJ7AM3B6AfFupbvDjxLTf8LAqs1cEyrLsoCoTvE_8XuQiyobCf4yL3c3bn4A',
+        apiKey:
+            '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',
         menu: widget.menu,
       ),
     );
