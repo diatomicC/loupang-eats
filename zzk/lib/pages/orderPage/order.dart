@@ -83,14 +83,17 @@ class _OrderPageState extends State<OrderPage> {
                               child: Container(
                                 decoration: BoxDecoration(
                                   color: Color.lerp(
-                                    Theme.of(context).appBarTheme.backgroundColor,
+                                    Theme.of(context)
+                                        .appBarTheme
+                                        .backgroundColor,
                                     Colors.white,
                                     lerpDouble(0, 1, sqrt(_opacity))!,
                                   ),
                                   borderRadius: BorderRadius.circular(0),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: Colors.black.withOpacity(0.5 * _opacity * _opacity),
+                                      color: Colors.black.withOpacity(
+                                          0.5 * _opacity * _opacity),
                                       spreadRadius: 5,
                                       blurRadius: 7,
                                       offset: Offset(0, 3),
@@ -185,19 +188,45 @@ class OrderPageBody extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text('Language: ', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-                DropdownButton<String>(
-                  value: language,
-                  items: <String>['English', 'Korean', 'Chinese', 'Japanese'].map((String value) {
-                    return DropdownMenuItem<String>(
-                      value: value,
-                      child: Text(value),
-                    );
-                  }).toList(),
-                  onChanged: (String? value) {
-                    if (value != null) {
-                      onLanguageChanged(value);
-                    }
+                Text('Language: ',
+                    style:
+                        TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                PopupMenuButton<String>(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(language, style: TextStyle(fontSize: 16)),
+                        Icon(Icons.arrow_drop_down),
+                      ],
+                    ),
+                  ),
+                  itemBuilder: (BuildContext context) {
+                    return <PopupMenuEntry<String>>[
+                      for (String lang in [
+                        'English',
+                        'Korean',
+                        'Chinese',
+                        'Japanese'
+                      ])
+                        PopupMenuItem<String>(
+                          value: lang,
+                          child: Row(
+                            children: [
+                              Text(lang),
+                              if (lang == language)
+                                Padding(
+                                  padding: EdgeInsets.only(left: 8),
+                                  child: Icon(Icons.check, size: 18),
+                                ),
+                            ],
+                          ),
+                        ),
+                    ];
+                  },
+                  onSelected: (String value) {
+                    onLanguageChanged(value);
                   },
                 ),
               ],
@@ -213,7 +242,10 @@ class OrderPageBody extends StatelessWidget {
           physics: NeverScrollableScrollPhysics(),
           itemCount: sections.length,
           itemBuilder: (BuildContext context, int index) {
-            return SectionWidget(section: sections[index], languageCode: languageCode, restaurantId: restaurantId);
+            return SectionWidget(
+                section: sections[index],
+                languageCode: languageCode,
+                restaurantId: restaurantId);
           },
         ),
       ],
