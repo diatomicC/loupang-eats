@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:zzk/logic/csvReader.dart';
 import '../classes/FoodSectionClass.dart';
+import 'sub/body.dart';
 
 class OrderPage extends StatefulWidget {
   @override
@@ -28,7 +29,7 @@ class _OrderPageState extends State<OrderPage> {
 
   void _onScroll() {
     final scrollPosition = _scrollController.offset;
-    final maxScroll = 200.0;
+    final maxScroll = 150.0;
 
     setState(() {
       _opacity = 1.0 - (scrollPosition / maxScroll).clamp(0.0, 1.0);
@@ -54,14 +55,21 @@ class _OrderPageState extends State<OrderPage> {
             slivers: <Widget>[
               SliverAppBar(
                 expandedHeight: 240.0,
-                floating: false,
-                titleSpacing: 30,
+                titleSpacing: 0,
                 centerTitle: false,
+                leading: IconButton(
+                  icon: Icon(Icons.arrow_back),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
                 pinned: true,
                 flexibleSpace: FlexibleSpaceBar(
+                  centerTitle: false,
                   title: Container(
                     child: Stack(
                       clipBehavior: Clip.none,
+                      alignment: Alignment.center,
                       children: [
                         Positioned(
                           left: -8 * 2,
@@ -70,7 +78,11 @@ class _OrderPageState extends State<OrderPage> {
                           bottom: -4 * 2,
                           child: Container(
                             decoration: BoxDecoration(
-                              color: Colors.white.withOpacity(sqrt(_opacity)),
+                              color: Color.lerp(
+                                Theme.of(context).appBarTheme.backgroundColor,
+                                Colors.white,
+                                sqrt(_opacity),
+                              ),
                               borderRadius: BorderRadius.circular(0),
                               boxShadow: [
                                 BoxShadow(
@@ -197,104 +209,6 @@ class OrderPageBody extends StatelessWidget {
           },
         ),
       ],
-    );
-  }
-}
-
-class SectionWidget extends StatelessWidget {
-  final FoodSection section;
-  final String languageCode;
-
-  SectionWidget({required this.section, required this.languageCode});
-
-  @override
-  Widget build(BuildContext context) {
-    List<FoodItem> filteredItems = section.items.where((item) => item.language == languageCode).toList();
-
-    if (filteredItems.isEmpty) {
-      return Container(); // Don't show empty sections
-    }
-
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Text(
-            section.name,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-        ListView.builder(
-          shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
-          itemCount: filteredItems.length,
-          itemBuilder: (BuildContext context, int index) {
-            return ItemWidget(
-              item: filteredItems[index],
-              languageCode: languageCode,
-            );
-          },
-        ),
-      ],
-    );
-  }
-}
-
-class ItemWidget extends StatelessWidget {
-  final FoodItem item;
-  final String languageCode;
-
-  ItemWidget({required this.item, required this.languageCode});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Card(
-        child: Column(
-          children: [
-            Container(
-              height: 200,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: NetworkImage('https://via.placeholder.com/200'),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    item.name,
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    item.description,
-                    style: TextStyle(
-                      fontSize: 14,
-                    ),
-                  ),
-                  Text(
-                    'Price: ${item.price.toStringAsFixed(2)} 원',
-                    style: TextStyle(
-                      fontSize: 14,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
     );
   }
 }

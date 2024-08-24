@@ -1,100 +1,136 @@
 import 'package:flutter/material.dart';
-import 'package:zzk/classes/FoodSectionClass.dart';
+import '../../classes/FoodSectionClass.dart';
 
-class OrderPageBody extends StatefulWidget {
-  OrderPageBody({
-    Key? key,
-    required this.sections,
-    required this.language,
-  }) : super(key: key);
-  final List<FoodSection> sections;
-  String language;
+class SectionWidget extends StatelessWidget {
+  final FoodSection section;
+  final String languageCode;
 
-  @override
-  State<OrderPageBody> createState() => _OrderPageBodyState();
-}
+  final bool isGridMode = true;
 
-class _OrderPageBodyState extends State<OrderPageBody> {
-  Map<String, String> languageCodeMap = {
-    'English': 'EN',
-    'Korean': 'KO',
-    'Chinese': 'ZH',
-    'Japanese': 'JA',
-  };
-  String languageCode = 'KO';
-
-  @override
-  void initState() {
-    super.initState();
-    // bind language to language code
-    languageCode = languageCodeMap[widget.language] ?? 'KO';
-    print(widget.language);
-  }
+  SectionWidget({required this.section, required this.languageCode});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          /** 
-         * SECTION 1: Language Dropdown
-         */
-          Container(
-            alignment: Alignment.centerLeft,
-            // color: Colors.blue,
-            // height: 200,
-            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-            // dropdown menu to choose language. This is now to be used to filter the food items
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              // add border
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey),
-                borderRadius: BorderRadius.circular(5),
+    List<FoodItem> filteredItems = section.items.where((item) => item.language == languageCode).toList();
+
+    if (filteredItems.isEmpty) {
+      return Container(); // Don't show empty sections
+    }
+
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            section.name,
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        isGridMode
+            ? GridView.builder(
+                padding: EdgeInsets.all(8),
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 8,
+                  mainAxisSpacing: 8,
+                  childAspectRatio: 0.7,
+                ),
+                itemCount: filteredItems.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return ItemGridWidget(
+                    item: filteredItems[index],
+                    languageCode: languageCode,
+                  );
+                },
+              )
+            : ListView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                itemCount: filteredItems.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return ItemListWidget(
+                    item: filteredItems[index],
+                    languageCode: languageCode,
+                  );
+                },
               ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
+      ],
+    );
+  }
+}
+
+class ItemGridWidget extends StatelessWidget {
+  final FoodItem item;
+  final String languageCode;
+
+  ItemGridWidget({required this.item, required this.languageCode});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(4),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            height: 170,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: NetworkImage('https://via.placeholder.com/200'),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Language: ', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-                  DropdownButton<String>(
-                    value: widget.language,
-                    items: <String>['English', 'Korean', 'Chinese', 'Japanese'].map((String value) {
-                      return DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(value),
-                      );
-                    }).toList(),
-                    onChanged: (String? value) {
-                      // change language
-                      setState(() {
-                        widget.language = value!;
-                        languageCode = languageCodeMap[widget.language] ?? 'KO';
-                      });
-                    },
+                  Text(
+                    item.name,
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  SizedBox(height: 4),
+                  Expanded(
+                    child: Text(
+                      item.description,
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.grey[600],
+                      ),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
                 ],
               ),
             ),
           ),
-
-          // simple divider
-          Divider(
-            color: Colors.grey,
-            thickness: 1,
-          ),
-          /**
-           * SECTION 2: Food Items
-           */
-
-          ListView.builder(
-            shrinkWrap: true,
-            itemCount: widget.sections.length,
-            itemBuilder: (BuildContext context, int index) {
-              return FoodSectionWidget(
-                section: widget.sections[index],
-                language: widget.language,
-              );
-            },
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Align(
+              alignment: Alignment.bottomLeft,
+              child: Text(
+                '${item.price.toStringAsFixed(0)}원',
+                style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
           ),
         ],
       ),
@@ -102,141 +138,63 @@ class _OrderPageBodyState extends State<OrderPageBody> {
   }
 }
 
-class FoodSectionWidget extends StatefulWidget {
-  final Key? key;
-  FoodSection section;
-  final String language;
-
-  FoodSectionWidget({required this.section, required this.language, this.key});
-
-  @override
-  _FoodSectionWidgetState createState() => _FoodSectionWidgetState();
-}
-
-class _FoodSectionWidgetState extends State<FoodSectionWidget> {
-  String language = '';
-  String languageCode = '';
-  Map<String, String> languageCodeMap = {
-    'English': 'EN',
-    'Korean': 'KO',
-    'Chinese': 'ZH',
-    'Japanese': 'JA',
-  };
-  @override
-  initState() {
-    super.initState();
-    // bind language to language code
-    languageCode = languageCodeMap[widget.language] ?? 'KO';
-    print(widget.language);
-    print(languageCode);
-  }
-
-  @override
-  void setState(VoidCallback fn) {
-    super.setState(fn);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Text(
-            widget.section.name,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-        ListView.builder(
-          shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
-          itemCount: widget.section.items.length,
-          itemBuilder: (BuildContext context, int index) {
-            // return FoodItemWidget(
-            //   item: widget.section.items[index],
-            //   language: widget.language,
-            // );
-
-            // filter the food items based on the language
-            // return Text('Language: $languageCode');
-
-            if (widget.section.items[index].language == languageCode) {
-              return FoodItemWidget(
-                item: widget.section.items[index],
-                language: widget.language,
-              );
-            } else {
-              return Container(
-                child: Text('?'),
-              );
-            }
-          },
-        ),
-      ],
-    );
-  }
-}
-
-class FoodItemWidget extends StatefulWidget {
+class ItemListWidget extends StatelessWidget {
   final FoodItem item;
-  final String language;
+  final String languageCode;
 
-  FoodItemWidget({required this.item, required this.language});
-
-  @override
-  _FoodItemWidgetState createState() => _FoodItemWidgetState();
-}
-
-class _FoodItemWidgetState extends State<FoodItemWidget> {
-  // filter the food items based on the language
+  ItemListWidget({required this.item, required this.languageCode});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 8),
       child: Card(
-        child: Column(
-          children: [
-            Container(
-              height: 200,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: NetworkImage('https://via.placeholder.com/200'),
-                  fit: BoxFit.cover,
+        // no border radius
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.zero,
+        ),
+        child: ListTile(
+          // make the leading fit full size
+          dense: true,
+          contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 0),
+          leading: Container(
+            width: 100,
+            height: 100,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: NetworkImage('https://via.placeholder.com/200'),
+                fit: BoxFit.cover,
+              ),
+              border: Border.all(color: Colors.grey),
+            ),
+          ),
+          title: Padding(
+            padding: const EdgeInsets.all(0.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  item.name,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
+                Text(
+                  item.description,
+                  style: TextStyle(
+                    fontSize: 14,
+                  ),
+                ),
+                Text(
+                  'Price: ${item.price.toStringAsFixed(2)} 원',
+                  style: TextStyle(
+                    fontSize: 14,
+                  ),
+                ),
+              ],
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    widget.item.name,
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    widget.item.description,
-                    style: TextStyle(
-                      fontSize: 14,
-                    ),
-                  ),
-                  Text(
-                    'Price: ${widget.item.price.toStringAsFixed(2)} 원',
-                    style: TextStyle(
-                      fontSize: 14,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );
