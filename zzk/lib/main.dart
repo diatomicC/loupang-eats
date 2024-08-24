@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zzk/logic/csvReader.dart';
 import 'package:zzk/pages/order.dart';
 
 void main() {
@@ -57,6 +58,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  String? menu;
 
   void _incrementCounter() {
     setState(() {
@@ -115,9 +117,16 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => OrderingScreen()));
+                  // run csv reader and
+
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => OrderPage()),
+                  );
                 },
-                child: Text('Go to Order Page'))
+                child: Text('Go to Order Page')),
+            // show menu
+            Text(menu ?? ''),
           ],
         ),
       ),

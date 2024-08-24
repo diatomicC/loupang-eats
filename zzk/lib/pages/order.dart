@@ -1,151 +1,200 @@
-import 'package:flutter/material.dart';
+import 'dart:math';
 
-class OrderingScreen extends StatelessWidget {
-  final List<FoodSection> foodSections = [
-    FoodSection(
-      'Appetizers',
-      [
-        FoodItem('Garlic Bread', 5.99, 'Crispy bread with garlic butter', 'https://example.com/garlic_bread.jpg'),
-        FoodItem('Mozzarella Sticks', 7.99, 'Crispy outside, gooey inside', 'https://example.com/mozzarella_sticks.jpg'),
-      ],
-    ),
-    FoodSection(
-      'Main Course',
-      [
-        FoodItem('Margherita Pizza', 12.99, 'Classic tomato and mozzarella', 'https://example.com/margherita_pizza.jpg'),
-        FoodItem('Chicken Alfredo', 14.99, 'Creamy pasta with grilled chicken', 'https://example.com/chicken_alfredo.jpg'),
-      ],
-    ),
-    // Add more sections as needed
-  ];
+import 'package:flutter/material.dart';
+import 'package:zzk/logic/csvReader.dart';
+
+import '../classes/FoodSectionClass.dart';
+
+class OrderPage extends StatefulWidget {
+  @override
+  State<OrderPage> createState() => _OrderPageState();
+}
+
+class _OrderPageState extends State<OrderPage> {
+  ScrollController _scrollController = ScrollController();
+  double _opacity = 1.0;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController.addListener(_onScroll);
+  }
+
+  @override
+  void dispose() {
+    _scrollController.removeListener(_onScroll);
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  void _onScroll() {
+    final scrollPosition = _scrollController.offset;
+    final maxScroll = 200.0; // Adjust this value to control how quickly opacity changes
+
+    setState(() {
+      _opacity = 1.0 - (scrollPosition / maxScroll).clamp(0.0, 1.0);
+    });
+  }
+
+  Future<List<FoodSection>> menuData = read();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: CustomScrollView(
-        slivers: <Widget>[
-          SliverAppBar(
-            expandedHeight: 240.0,
-            floating: false,
-            titleSpacing: 30,
-            pinned: true,
-            flexibleSpace: FlexibleSpaceBar(
-              centerTitle: false,
-              title: Container(
-                child: Stack(
-                  children: [
-                    Text('Our Menu'),
-                    Container(
-                      color: Colors.white.withOpacity(0.5),
-                    )
-                  ],
+    return FutureBuilder(
+        future: menuData,
+        builder: (BuildContext context, AsyncSnapshot snapshot) {
+          return Scaffold(
+            body: CustomScrollView(
+              controller: _scrollController,
+              slivers: <Widget>[
+                SliverAppBar(
+                  expandedHeight: 240.0,
+                  floating: false,
+                  titleSpacing: 30,
+                  centerTitle: false,
+                  pinned: true,
+                  flexibleSpace: FlexibleSpaceBar(
+                    title: Container(
+                      child: Stack(
+                        clipBehavior: Clip.none,
+                        children: [
+                          Positioned(
+                            left: -8 * 2,
+                            right: -8 * 2,
+                            top: -4 * 2,
+                            bottom: -4 * 2,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white.withOpacity(sqrt(_opacity)),
+                                borderRadius: BorderRadius.circular(0),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.5 * _opacity * _opacity),
+                                    spreadRadius: 5,
+                                    blurRadius: 7,
+                                    offset: Offset(0, 3),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Text(
+                            'Our Menu',
+                            style: TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.normal,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    background: Image.network(
+                      'https://www.eatright.org/-/media/images/eatright-landing-pages/foodgroupslp_804x482.jpg?as=0&w=967&rev=d0d1ce321d944bbe82024fff81c938e7&hash=E6474C8EFC5BE5F0DA9C32D4A797D10D',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
-                // decoration: BoxDecoration(
-                //   color: Colors.white.withOpacity(0.5),
-                //   borderRadius: BorderRadius.circular(8),
-                // ),
-              ),
-              background: Image.network(
-                // sample image
-                'https://www.eatright.org/-/media/images/eatright-landing-pages/foodgroupslp_804x482.jpg?as=0&w=967&rev=d0d1ce321d944bbe82024fff81c938e7&hash=E6474C8EFC5BE5F0DA9C32D4A797D10D',
-                fit: BoxFit.cover,
-              ),
+                if (snapshot.connectionState == ConnectionState.waiting)
+                  SliverFillRemaining(
+                    child: Center(
+                      child: CircularProgressIndicator(),
+                    ),
+                  ),
+                if (snapshot.hasError)
+                  SliverFillRemaining(
+                    child: Center(
+                      child: Text('An error occurred while loading the menu.'),
+                    ),
+                  ),
+                if (snapshot.hasData)
+                  SliverList(
+                    delegate: SliverChildBuilderDelegate(
+                      (BuildContext context, int index) {
+                        if (index >= snapshot.data.length) return null;
+
+                        return _buildFoodSection(snapshot.data[index]);
+                      },
+                      childCount: snapshot.data.length,
+                    ),
+                  ),
+              ],
             ),
-          ),
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (BuildContext context, int index) {
-                if (index >= foodSections.length) return null;
-                return _buildFoodSection(foodSections[index]);
-              },
-              childCount: foodSections.length,
-            ),
-          ),
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (BuildContext context, int index) {
-                if (index >= foodSections.length) return null;
-                return _buildFoodSection(foodSections[index]);
-              },
-              childCount: foodSections.length,
-            ),
-          ),
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (BuildContext context, int index) {
-                if (index >= foodSections.length) return null;
-                return _buildFoodSection(foodSections[index]);
-              },
-              childCount: foodSections.length,
-            ),
-          ),
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (BuildContext context, int index) {
-                if (index >= foodSections.length) return null;
-                return _buildFoodSection(foodSections[index]);
-              },
-              childCount: foodSections.length,
-            ),
-          ),
-        ],
-      ),
-    );
+          );
+        });
   }
 
   Widget _buildFoodSection(FoodSection section) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
+      children: [
         Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(8.0),
           child: Text(
             section.name,
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
         ListView.builder(
-          physics: NeverScrollableScrollPhysics(),
           shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
           itemCount: section.items.length,
-          itemBuilder: (context, index) {
+          itemBuilder: (BuildContext context, int index) {
             return _buildFoodItem(section.items[index]);
           },
         ),
       ],
     );
   }
+}
 
-  Widget _buildFoodItem(FoodItem item) {
-    return Card(
-      margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      child: ListTile(
-        leading: CircleAvatar(
-            // backgroundImage: NetworkImage(item.imageUrl),
+Widget _buildFoodItem(FoodItem item) {
+  return Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: Card(
+      child: Column(
+        children: [
+          //placeholder image
+          Container(
+            height: 200,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: NetworkImage('https://via.placeholder.com/200'),
+                fit: BoxFit.cover,
+              ),
             ),
-        title: Text(item.name),
-        subtitle: Text(item.description),
-        trailing: Text(
-          '\$${item.price.toStringAsFixed(2)}',
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  item.name,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  item.description,
+                  style: TextStyle(
+                    fontSize: 14,
+                  ),
+                ),
+                Text(
+                  'Price: ${item.price.toStringAsFixed(2)} 원',
+                  style: TextStyle(
+                    fontSize: 14,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
-    );
-  }
-}
-
-class FoodSection {
-  final String name;
-  final List<FoodItem> items;
-
-  FoodSection(this.name, this.items);
-}
-
-class FoodItem {
-  final String name;
-  final double price;
-  final String description;
-  final String imageUrl;
-
-  FoodItem(this.name, this.price, this.description, this.imageUrl);
+    ),
+  );
 }
