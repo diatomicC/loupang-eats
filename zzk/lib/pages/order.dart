@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:zzk/logic/csvReader.dart';
 
 import '../classes/FoodSectionClass.dart';
+import 'sub/body.dart';
 
 class OrderPage extends StatefulWidget {
   @override
@@ -54,6 +55,7 @@ class _OrderPageState extends State<OrderPage> {
                   centerTitle: false,
                   pinned: true,
                   flexibleSpace: FlexibleSpaceBar(
+                    /* Title */
                     title: Container(
                       child: Stack(
                         clipBehavior: Clip.none,
@@ -89,6 +91,7 @@ class _OrderPageState extends State<OrderPage> {
                         ],
                       ),
                     ),
+                    /* Top Image */
                     background: Image.network(
                       'https://www.eatright.org/-/media/images/eatright-landing-pages/foodgroupslp_804x482.jpg?as=0&w=967&rev=d0d1ce321d944bbe82024fff81c938e7&hash=E6474C8EFC5BE5F0DA9C32D4A797D10D',
                       fit: BoxFit.cover,
@@ -110,10 +113,17 @@ class _OrderPageState extends State<OrderPage> {
                 if (snapshot.hasData)
                   SliverList(
                     delegate: SliverChildBuilderDelegate(
+                      /**
+                       * !SECTION 
+                       * This is where the menu is shown
+                       */
                       (BuildContext context, int index) {
                         if (index >= snapshot.data.length) return null;
-
-                        return _buildFoodSection(snapshot.data[index]);
+                        // return _buildFoodSection(snapshot.data[index]);
+                        return OrderPageBody(
+                          key: ValueKey(snapshot.data[index].name),
+                          section: snapshot.data[index],
+                        );
                       },
                       childCount: snapshot.data.length,
                     ),
@@ -123,78 +133,4 @@ class _OrderPageState extends State<OrderPage> {
           );
         });
   }
-
-  Widget _buildFoodSection(FoodSection section) {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Text(
-            section.name,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-        ListView.builder(
-          shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
-          itemCount: section.items.length,
-          itemBuilder: (BuildContext context, int index) {
-            return _buildFoodItem(section.items[index]);
-          },
-        ),
-      ],
-    );
-  }
-}
-
-Widget _buildFoodItem(FoodItem item) {
-  return Padding(
-    padding: const EdgeInsets.all(8.0),
-    child: Card(
-      child: Column(
-        children: [
-          //placeholder image
-          Container(
-            height: 200,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: NetworkImage('https://via.placeholder.com/200'),
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  item.name,
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text(
-                  item.description,
-                  style: TextStyle(
-                    fontSize: 14,
-                  ),
-                ),
-                Text(
-                  'Price: ${item.price.toStringAsFixed(2)} 원',
-                  style: TextStyle(
-                    fontSize: 14,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    ),
-  );
 }
