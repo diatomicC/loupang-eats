@@ -96,7 +96,8 @@ class _MyHomePageState extends State<MyHomePage> {
             // make dropdown for 4 languages
             DropdownButton<String>(
               value: 'English',
-              items: <String>['English', 'Japanese', 'Chinese', 'Korean'].map<DropdownMenuItem<String>>((String value) {
+              items: <String>['English', 'Japanese', 'Chinese', 'Korean']
+                  .map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
                   child: Text(value),
@@ -118,12 +119,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 // border radius
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: AllergySelectorWidget(),
+              child: AllergySelectorWidget(
+                onSelectionsChanged: (Map<String, bool> selections) {
+                  // Handle the updated selections here
+                  print(selections);
+                },
+              ),
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(0, 32, 0, 16),
               child: Text(
-                'When you' 're ready, click the button below to go to the order page.',
+                'When you'
+                're ready, click the button below to go to the order page.',
               ),
             ),
             Container(
