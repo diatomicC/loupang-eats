@@ -56,7 +56,7 @@ class _OrderPageState extends State<OrderPage> {
             slivers: <Widget>[
               SliverAppBar(
                 // no back button
-                automaticallyImplyLeading: false,
+                automaticallyImplyLeading: true,
                 expandedHeight: 240.0,
                 titleSpacing: 0,
                 centerTitle: false,
@@ -72,45 +72,47 @@ class _OrderPageState extends State<OrderPage> {
                       ? CircularProgressIndicator(
                           color: Colors.white,
                         )
-                      : Stack(
-                          clipBehavior: Clip.none,
-                          children: [
-                            Positioned(
-                              left: -8 * 2,
-                              right: -8 * 2,
-                              top: -4 * 2,
-                              bottom: -4 * 2,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: Color.lerp(
-                                    Theme.of(context).appBarTheme.backgroundColor,
-                                    Colors.white,
-                                    lerpDouble(0, 1, sqrt(_opacity))!,
-                                  ),
-                                  borderRadius: BorderRadius.circular(0),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black.withOpacity(0.5 * _opacity * _opacity),
-                                      spreadRadius: 5,
-                                      blurRadius: 7,
-                                      offset: Offset(0, 3),
+                      : snapshot.hasError
+                          ? Text('An error occurred while loading the menu.')
+                          : Stack(
+                              clipBehavior: Clip.none,
+                              children: [
+                                Positioned(
+                                  left: -8 * 2,
+                                  right: -8 * 2,
+                                  top: -4 * 2,
+                                  bottom: -4 * 2,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: Color.lerp(
+                                        Theme.of(context).appBarTheme.backgroundColor,
+                                        Colors.white,
+                                        lerpDouble(0, 1, sqrt(_opacity))!,
+                                      ),
+                                      borderRadius: BorderRadius.circular(0),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.black.withOpacity(0.5 * _opacity * _opacity),
+                                          spreadRadius: 5,
+                                          blurRadius: 7,
+                                          offset: Offset(0, 3),
+                                        ),
+                                      ],
                                     ),
-                                  ],
+                                  ),
                                 ),
-                              ),
-                            ),
-                            Container(
-                              child: Text(
-                                snapshot.data.restaurantName,
-                                style: TextStyle(
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.normal,
-                                  color: Colors.black,
+                                Container(
+                                  child: Text(
+                                    snapshot.data.restaurantName,
+                                    style: TextStyle(
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.normal,
+                                      color: Colors.black,
+                                    ),
+                                  ),
                                 ),
-                              ),
+                              ],
                             ),
-                          ],
-                        ),
                   background: Image.network(
                     'https://www.eatright.org/-/media/images/eatright-landing-pages/foodgroupslp_804x482.jpg?as=0&w=967&rev=d0d1ce321d944bbe82024fff81c938e7&hash=E6474C8EFC5BE5F0DA9C32D4A797D10D',
                     fit: BoxFit.cover,

@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:zzk/clicky/clicky_flutter.dart';
+import 'package:zzk/importantVariables.dart';
 import 'package:zzk/pages/orderPage/order.dart';
 
+import 'clicky/styles.dart';
 import 'pages/allergySelector/allergySelector.dart';
+import 'pages/uploaderZone/uploaderZonePage.dart';
+
+// import 'package:firebase_core/firebase_core.dart';
+// import 'firebase_options.dart';
 
 void main() {
   runApp(const MyApp());
 }
+
+Map<String, bool> allergySelections = {};
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -18,6 +27,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
+        // remove splash and highlight color
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -27,15 +39,6 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
   final String title;
 
   @override
@@ -44,60 +47,33 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  String? menu;
+  String? menu = 'sakura_breeze';
 
   void _incrementCounter() {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
       _counter++;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
       body: Container(
         padding: const EdgeInsets.all(16),
-        margin: const EdgeInsets.all(32),
+        margin: const EdgeInsets.all(16),
         child: ListView(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
           children: <Widget>[
-            // make dropdown for 4 languages
+            //! language dropdown
             DropdownButton<String>(
+              // make it small vertically. no padding
+              isDense: true,
+
               value: 'English',
-              items: <String>['English', 'Japanese', 'Chinese', 'Korean']
-                  .map<DropdownMenuItem<String>>((String value) {
+              items: <String>['English', 'Japanese', 'Chinese', 'Korean'].map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
                   child: Text(value),
@@ -109,10 +85,69 @@ class _MyHomePageState extends State<MyHomePage> {
                 });
               },
             ),
+            //! text
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 16, 0, 0),
+              child: Text(
+                'Welcome to the Sakura Breeze restaurant! Please select any dietary restrictions or allergies you may have.',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
 
+            // Vegan:
+            // Excludes: Milk, Eggs, Fish, Shellfish, Gelatin
+            // Vegetarian:
+            // Excludes: Fish, Shellfish, Gelatin
+            // Halal:
+            // Excludes: Pork, Alcohol
+            // Kosher:
+            // Excludes: Pork, Shellfish
+            // Gluten-Free:
+            // Excludes: Wheat
+            // Pescatarian:
+            // Excludes: Pork, Beef
+            // Dairy-Free:
+            // Excludes: Milk
+            // Nut-Free:
+            // Excludes: Peanuts, Tree nuts
+            // Alcohol-Free:
+            // Excludes: Alcohol
+            // Low-FODMAP:
+            // Excludes: Milk, Wheat, Soy
+            // Paleo:
+            // Excludes: Milk, Soy, Wheat, Corn
+            // Keto:
+            // Excludes: Wheat, Corn
+
+            //! preset chips, select one
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  presetChip(label: 'None', turnOnIndex: []),
+                  presetChip(label: 'Vegan', turnOnIndex: [2, 3, 4, 12, 13]),
+                  presetChip(label: 'Vegetarian', turnOnIndex: [4, 5, 12]),
+                  presetChip(label: 'Halal', turnOnIndex: [9, 10]),
+                  presetChip(label: 'Kosher', turnOnIndex: [9, 5]),
+                  presetChip(label: 'Gluten-Free', turnOnIndex: [7]),
+                  presetChip(label: 'Pescatarian', turnOnIndex: [9, 10]),
+                  presetChip(label: 'Dairy-Free', turnOnIndex: [2]),
+                  presetChip(label: 'Nut-Free', turnOnIndex: [0, 1]),
+                  presetChip(label: 'Alcohol-Free', turnOnIndex: [11]),
+                  presetChip(label: 'Low-FODMAP', turnOnIndex: [2, 7, 6]),
+                  presetChip(label: 'Paleo', turnOnIndex: [2, 6, 7, 14]),
+                  presetChip(label: 'Keto', turnOnIndex: [7, 14]),
+                ],
+              ),
+            ),
+
+            //! allergy selector
             Container(
               padding: const EdgeInsets.all(16),
-              height: MediaQuery.of(context).size.height * 0.5,
+              height: MediaQuery.of(context).size.height * 0.35,
               decoration: BoxDecoration(
                 // border
                 border: Border.all(color: Colors.grey),
@@ -124,6 +159,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   // Handle the updated selections here
                   print(selections);
                 },
+                allergySelections: allergySelections,
+                // make a callback function to check the selections from outside
               ),
             ),
             Padding(
@@ -133,9 +170,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 're ready, click the button below to go to the order page.',
               ),
             ),
-            Container(
-              height: 60,
-              child: ElevatedButton(
+            Clicky(
+              style: ClickyStyle(
+                color: Colors.transparent,
+              ),
+              child: SizedBox(
+                height: 60,
+                child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     // border radius
                     shape: RoundedRectangleBorder(
@@ -149,16 +190,76 @@ class _MyHomePageState extends State<MyHomePage> {
                       MaterialPageRoute(builder: (context) => OrderPage()),
                     );
                   },
-                  child: Text('Go to Order Page')),
+                  child: Text(
+                    'Order!',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => UploaderZonePage()),
+          );
+        },
+        isExtended: true,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: const Text('Uploader Zone'),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+
+  Widget presetChip({required String label, required List<int> turnOnIndex}) => Container(
+        padding: const EdgeInsets.all(2.0),
+        child: InkWell(
+          onTap: () {
+            // turn on the selected allergies
+            setState(() {
+              for (int i in turnOnIndex) {
+                allergySelections[restrictedFoodIngredients[i]] = true;
+              }
+              // for the rest, turn off
+              for (int i = 0; i < restrictedFoodIngredients.length; i++) {
+                if (!turnOnIndex.contains(i)) {
+                  allergySelections[restrictedFoodIngredients[i]] = false;
+                }
+              }
+
+              // update the allergyCodesChosen
+              allergyCodesChosen = restrictedFoodIngredients.where((allergy) => allergySelections[allergy]!).toList();
+              print('allergySelections: ${allergyCodesChosen}');
+            });
+          },
+          child: Clicky(
+            child: Chip(
+              // change color when proper checkbox is selected
+              backgroundColor: turnOnIndex.every((element) => allergySelections[restrictedFoodIngredients[element]] == true)
+                  ? Theme.of(context).colorScheme.primary
+                  : Colors.white,
+              label: Text(
+                label,
+                style: TextStyle(
+                  color: turnOnIndex.every((element) => allergySelections[restrictedFoodIngredients[element]] == true)
+                      ? Colors.white
+                      : Theme.of(context).colorScheme.primary,
+                ),
+              ),
+              // border radius
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+            ),
+          ),
+        ),
+      );
 }

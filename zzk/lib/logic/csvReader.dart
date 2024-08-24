@@ -4,7 +4,7 @@ import 'package:zzk/classes/FoodSectionClass.dart';
 
 Future<Menu> loadFoodSectionsAndInfo(String restaurantId) async {
   try {
-    // Load the CSV file
+    // Load the CSV file from Firebase Storage
     String assetPath = 'assets/$restaurantId.csv';
     final csvData = await rootBundle.loadString(assetPath);
     final sections = <String, List<FoodItem>>{};
