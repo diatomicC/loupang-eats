@@ -9,13 +9,18 @@ class SectionWidget extends StatelessWidget {
   final String languageCode;
   final String restaurantId;
 
-  final bool isGridMode = true;
+  final bool isGridMode;
 
-  SectionWidget({required this.section, required this.languageCode, required this.restaurantId});
+  SectionWidget(
+      {required this.section,
+      required this.languageCode,
+      required this.restaurantId,
+      required this.isGridMode});
 
   @override
   Widget build(BuildContext context) {
-    List<FoodItem> filteredItems = section.items.where((item) => item.language == languageCode).toList();
+    List<FoodItem> filteredItems =
+        section.items.where((item) => item.language == languageCode).toList();
 
     //  if the filteredItems list is empty, return an empty container
     if (filteredItems.isEmpty) {
@@ -93,7 +98,11 @@ class ItemGridWidget extends StatelessWidget {
   final String languageCode;
   final Image? receivedImage;
 
-  ItemGridWidget({required this.item, required this.languageCode, required this.restaurantId, this.receivedImage});
+  ItemGridWidget(
+      {required this.item,
+      required this.languageCode,
+      required this.restaurantId,
+      this.receivedImage});
 
   @override
   Widget build(BuildContext context) {
@@ -188,7 +197,11 @@ class ItemListWidget extends StatelessWidget {
   final String restaurantId;
   final Image? receievedImage;
 
-  ItemListWidget({required this.item, required this.languageCode, required this.restaurantId, this.receievedImage});
+  ItemListWidget(
+      {required this.item,
+      required this.languageCode,
+      required this.restaurantId,
+      this.receievedImage});
 
   @override
   Widget build(BuildContext context) {
