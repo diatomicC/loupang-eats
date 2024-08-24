@@ -14,6 +14,7 @@ class _OrderPageState extends State<OrderPage> {
   double _opacity = 1.0;
   String _language = 'Chinese';
   bool _isGridMode = false;
+  bool _isLoading = false;
 
   @override
   void initState() {
@@ -45,10 +46,15 @@ class _OrderPageState extends State<OrderPage> {
     });
   }
 
-  void _toggleViewMode() {
-    // New method to toggle between grid and list view
+  void _toggleViewMode() async {
+    setState(() {
+      _isLoading = true;
+    });
+
+    await Future.delayed(Duration(seconds: 1)); // 로딩 시간 설정
     setState(() {
       _isGridMode = !_isGridMode;
+      _isLoading = false;
     });
   }
 
@@ -121,19 +127,25 @@ class _OrderPageState extends State<OrderPage> {
                   ),
                 ),
               ),
-              if (snapshot.connectionState == ConnectionState.waiting)
+              if (_isLoading) // 로딩 중일 때 표시
                 SliverFillRemaining(
                   child: Center(
                     child: CircularProgressIndicator(),
                   ),
-                ),
-              if (snapshot.hasError)
+                )
+              else if (snapshot.connectionState == ConnectionState.waiting)
+                SliverFillRemaining(
+                  child: Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                )
+              else if (snapshot.hasError)
                 SliverFillRemaining(
                   child: Center(
                     child: Text('An error occurred while loading the menu.'),
                   ),
-                ),
-              if (snapshot.hasData)
+                )
+              else if (snapshot.hasData)
                 SliverToBoxAdapter(
                   child: OrderPageBody(
                     sections: snapshot.data,
@@ -236,9 +248,10 @@ class OrderPageBody extends StatelessWidget {
           itemCount: sections.length,
           itemBuilder: (BuildContext context, int index) {
             return SectionWidget(
-                section: sections[index],
-                languageCode: languageCode,
-                isGridMode: isGridMode);
+              section: sections[index],
+              languageCode: languageCode,
+              isGridMode: isGridMode,
+            );
           },
         ),
       ],
