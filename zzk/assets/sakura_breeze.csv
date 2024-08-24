@@ -1,0 +1,322 @@
+ID,Language,Category,Food,ImageFileName,Description,Price,Restrictions,Ingredient
+001,KO,철판구이,가리비버터구이,garlic_butter_scallops.jpg,가리비를 버터에 구운 요리,31000,"조개류, 유제품","가리비, 버터"
+002,KO,철판구이,전복 버터구이,garlic_butter_abalone.jpg,전복을 버터에 구운 요리,32000,"조개류, 유제품","전복, 버터"
+003,KO,철판구이,한우 등심구이,hanwoo_ribeye_steak.jpg,한우 등심을 구운 요리,33000,소고기,한우 등심
+004,KO,철판구이,참마버터구이,butter_grilled_yam.jpg,참마를 버터에 구운 요리,15000,유제품,"참마, 버터"
+005,KO,철판구이,부추계란볶음,garlic_chive_egg_stirfry.jpg,부추와 계란을 볶은 요리,11000,계란,"부추, 계란"
+006,KO,철판구이,갑오징어 버터구이,garlic_butter_cuttlefish.jpg,갑오징어를 버터에 구운 요리,26000,"해산물, 유제품","갑오징어, 버터"
+007,KO,철판구이,한우대창구이,hanwoo_tripe_grill.jpg,한우 대창을 구운 요리,24000,소고기,한우 대창
+008,KO,철판구이,아스파라 버터구이,garlic_butter_asparagus.jpg,아스파라거스를 버터에 구운 요리,19000,유제품,"아스파라거스, 버터"
+009,KO,철판구이,닭고기마늘구이,garlic_grilled_chicken.jpg,닭고기를 마늘과 함께 구운 요리,20000,닭고기,"닭고기, 마늘"
+010,KO,철판구이,감자베이컨 치즈구이,potato_bacon_cheese_bake.jpg,"감자와 베이컨, 치즈를 구운 요리",15000,"돼지고기, 유제품","감자, 베이컨, 치즈"
+011,KO,철판구이,동아리 함박,dongari_hamburger_steak.jpg,동아리 스타일의 함박 스테이크,20000,"소고기, 계란","소고기, 계란"
+012,KO,철판구이,돈베이야키,tonpeiyaki.jpg,돼지고기 삼겹살 구이,15000,돼지고기,돼지고기 삼겹살
+013,KO,철판구이,아보카도 명란치즈구이,avocado_mentaiko_cheese_grill.jpg,"아보카도와 명란, 치즈를 구운 요리",17000,"유제품, 생선알","아보카도, 명란, 치즈"
+014,KO,철판구이,야끼교자,yaki_gyoza.jpg,구운 교자 만두,11000,"밀가루, 돼지고기","밀가루, 돼지고기"
+015,KO,스피드,카니미소,kani_miso.jpg,게살과 미소를 곁들인 요리,11000,"조개류, 대두","게살, 미소"
+016,KO,스피드,소라와사비,snail_wasabi.jpg,소라와 와사비를 곁들인 요리,9500,"조개류, 와사비","소라, 와사비"
+017,KO,스피드,타코와사비,taco_wasabi.jpg,문어와 와사비를 곁들인 요리,11000,"해산물, 와사비","문어, 와사비"
+018,KO,스피드,삶은 아스파라거스,boiled_asparagus.jpg,아스파라거스를 삶은 요리,10000,-,아스파라거스
+019,KO,스피드,참마와사비,yam_wasabi.jpg,참마와 와사비를 곁들인 요리,10000,와사비,"참마, 와사비"
+020,KO,스피드,삶은 풋콩,boiled_edamame.jpg,풋콩을 삶은 요리,5000,대두,풋콩
+021,KO,스피드,아보카도사라다,avocado_salad.jpg,아보카도 샐러드,11000,-,아보카도
+022,KO,스피드,가오리 지느러미 구이,grilled_skate_fin.jpg,가오리 지느러미를 구운 요리,16000,해산물,가오리 지느러미
+023,KO,스피드,허니크림치즈,honey_cream_cheese.jpg,허니 크림 치즈,9500,"유제품, 꿀","크림 치즈, 꿀"
+024,KO,샐러드,시저샐러드,caesar_salad.jpg,시저 드레싱을 곁들인 샐러드,20000,"유제품, 계란","시저 드레싱, 상추"
+025,KO,샐러드,작은멸치두부샐러드,anchovy_tofu_salad.jpg,작은 멸치와 두부를 곁들인 샐러드,20000,"생선, 대두","멸치, 두부"
+026,KO,샐러드,크래미 샐러드,crabmeat_salad.jpg,크래미를 곁들인 샐러드,20000,게살,"크래미, 상추"
+027,KO,샐러드,감자샐러드,potato_salad.jpg,감자를 곁들인 샐러드,8000,-,감자
+028,KO,샐러드,명란크림치즈감자샐러드,mentaiko_cream_potato_salad.jpg,명란과 크림 치즈를 곁들인 감자 샐러드,12000,"유제품, 생선알","명란, 크림 치즈, 감자"
+029,KO,샐러드,토마토샐러드,tomato_salad.jpg,토마토를 곁들인 샐러드,11000,-,토마토
+030,KO,샐러드,샐러리쯔께모노,celery_tsukemono.jpg,샐러리를 절인 요리,8000,-,샐러리
+031,KO,샐러드,오이쯔께모노,cucumber_tsukemono.jpg,오이를 절인 요리,8000,-,오이
+032,KO,샐러드,타타키오이,smashed_cucumber.jpg,오이를 으깬 샐러드,10000,-,"오이, 해조류"
+033,KO,나베,농어린스키야키,sea_bass_sukiyaki.jpg,농어린 스타일 스키야키,42000,"소고기, 대두","소고기, 야채"
+034,KO,나베,추가메뉴 고기,additional_meat.jpg,스키야키용 추가 고기,15000,소고기,고기
+035,KO,나베,추가메뉴 우동사리,additional_udon_noodles.jpg,우동 사리 추가,2000,밀가루,우동
+036,KO,나베,나가사키 짬뽕탕,nagasaki_champon_soup.jpg,나가사키 스타일 짬뽕탕,33000,해산물,"해산물, 야채"
+037,KO,나베,오뎅탕,oden_soup.jpg,어묵을 곁들인 탕,33000,"생선, 대두","어묵, 야채"
+038,KO,생선구이,삼치 소금구이,grilled_spanish_mackerel.jpg,삼치를 소금에 구운 요리,16000,생선,"삼치, 소금"
+039,KO,생선구이,시사모 소금구이,grilled_shishamo.jpg,시사모를 소금에 구운 요리,15000,생선,"시사모, 소금"
+040,KO,생선구이,임연수어 소금구이,grilled_atka_mackerel.jpg,임연수어를 소금에 구운 요리,18000,생선,"임연수어, 소금"
+041,KO,일품요리,한우 타타키,hanwoo_tataki.jpg,한우를 얇게 썰어 구운 요리,31000,소고기,한우
+042,KO,일품요리,시메사바,shime_saba.jpg,고등어를 식초에 절인 요리,17000,생선,"고등어, 식초"
+043,KO,일품요리,명란구이,grilled_mentaiko.jpg,명란을 구운 요리,19000,생선알,명란
+044,KO,일품요리,한우스지 군만 된장조림,hanwoo_tendon_miso_stew.jpg,한우스지를 된장에 조린 요리,13000,"소고기, 대두","한우스지, 된장"
+045,KO,일품요리,바지락 청주찜,steamed_clams_sake.jpg,바지락을 청주에 찐 요리,16000,조개류,"바지락, 청주"
+046,KO,일품요리,바지락 버터구이,garlic_butter_clams.jpg,바지락을 버터에 구운 요리,16000,"조개류, 유제품","바지락, 버터"
+047,KO,일품요리,아게다시두부,agedashi_tofu.jpg,두부를 튀겨서 다시에 담근 요리,14000,"대두, 밀가루","두부, 다시"
+048,KO,일품요리,가지 된장볶음,miso_eggplant_stirfry.jpg,가지를 된장에 볶은 요리,11000,대두,"가지, 된장"
+049,KO,일품요리,가지튀김,fried_eggplant.jpg,가지를 튀긴 요리,11000,밀가루,가지
+050,KO,일품요리,아게다시모찌,agedashi_mochi.jpg,모찌를 튀겨서 다시에 담근 요리,14000,"대두, 밀가루, 쌀","모찌, 다시"
+051,KO,일품요리,계란말이,tamagoyaki.jpg,계란을 말아서 만든 요리,14000,계란,계란
+052,KO,일품요리,명란계란말이,mentaiko_tamagoyaki.jpg,명란을 넣어 만든 계란말이,22000,"계란, 생선알","계란, 명란"
+053,KO,튀김,치킨 가라아게,chicken_karaage.jpg,치킨을 튀겨서 만든 가라아게,22000,"닭고기, 밀가루","닭고기, 밀가루, 튀김가루"
+054,KO,튀김,오징어다리 튀김,fried_squid_legs.jpg,오징어다리를 튀긴 요리,19000,"해산물, 밀가루","오징어, 밀가루, 튀김가루"
+055,KO,튀김,문어튀김,fried_octopus.jpg,문어를 튀긴 요리,13000,"해산물, 밀가루","문어, 밀가루, 튀김가루"
+056,KO,튀김,닭모래집 가라아게,chicken_gizzard_karaage.jpg,닭모래집을 튀긴 가라아게,17000,"닭고기, 밀가루","닭모래집, 밀가루, 튀김가루"
+057,KO,튀김,명란마요 꿀모찌튀김,mentaiko_mayo_honey_mochi_fry.jpg,명란마요와 꿀을 넣은 모찌 튀김,14000,"생선알, 밀가루, 꿀","명란, 마요네즈, 모찌, 꿀"
+058,KO,튀김,우엉튀김,fried_burdock.jpg,우엉을 튀긴 요리,16000,밀가루,"우엉, 밀가루, 튀김가루"
+059,KO,튀김,진미채 덴뿌라,tempura_dried_squid.jpg,진미채를 튀긴 덴뿌라,14000,"해산물, 밀가루","진미채, 밀가루, 튀김가루"
+060,KO,튀김,감자튀김,french_fries.jpg,감자를 튀긴 요리,11000,-,"감자, 소금, 튀김기름"
+061,KO,튀김,갑오징어 덴뿌라,tempura_cuttlefish.jpg,갑오징어를 튀긴 덴뿌라,25000,"해산물, 밀가루","갑오징어, 밀가루, 튀김가루"
+062,KO,튀김,굴튀김,fried_oysters.jpg,굴을 튀긴 요리,15000,"조개류, 밀가루","굴, 밀가루, 튀김가루"
+063,KO,튀김,전갱이 튀김,fried_horse_mackerel.jpg,전갱이를 튀긴 요리,20000,"생선, 밀가루","전갱이, 밀가루, 튀김가루"
+064,KO,튀김,새우크림 고로케,shrimp_cream_croquette.jpg,새우와 크림이 들어간 고로케,21000,"해산물, 유제품, 밀가루","새우, 크림, 밀가루, 튀김가루"
+001,JA,鉄板焼き,ホタテバター焼き,garlic_butter_scallops.jpg,ホタテをバターで焼いた料理,31000,"貝類, 乳製品","ホタテ, バター"
+002,JA,鉄板焼き,アワビバター焼き,garlic_butter_abalone.jpg,アワビをバターで焼いた料理,32000,"貝類, 乳製品","アワビ, バター"
+003,JA,鉄板焼き,和牛サーロイン焼き,hanwoo_ribeye_steak.jpg,和牛サーロインを焼いた料理,33000,牛肉,和牛サーロイン
+004,JA,鉄板焼き,山芋バター焼き,butter_grilled_yam.jpg,山芋をバターで焼いた料理,15000,乳製品,"山芋, バター"
+005,JA,鉄板焼き,ニラ玉炒め,garlic_chive_egg_stirfry.jpg,ニラと卵を炒めた料理,11000,卵,"ニラ, 卵"
+006,JA,鉄板焼き,コウイカバター焼き,garlic_butter_cuttlefish.jpg,コウイカをバターで焼いた料理,26000,"海産物, 乳製品","コウイカ, バター"
+007,JA,鉄板焼き,和牛大腸焼き,hanwoo_tripe_grill.jpg,和牛の大腸を焼いた料理,24000,牛肉,和牛大腸
+008,JA,鉄板焼き,アスパラバター焼き,garlic_butter_asparagus.jpg,アスパラガスをバターで焼いた料理,19000,乳製品,"アスパラガス, バター"
+009,JA,鉄板焼き,鶏肉ガーリック焼き,garlic_grilled_chicken.jpg,鶏肉をニンニクと一緒に焼いた料理,20000,鶏肉,"鶏肉, ニンニク"
+010,JA,鉄板焼き,ジャガイモベーコンチーズ焼き,potato_bacon_cheese_bake.jpg,ジャガイモとベーコン、チーズを焼いた料理,15000,"豚肉, 乳製品","ジャガイモ, ベーコン, チーズ"
+011,JA,鉄板焼き,ハンバーグステーキ,dongari_hamburger_steak.jpg,ハンバーグステーキ,20000,"牛肉, 卵","牛肉, 卵"
+012,JA,鉄板焼き,豚バラ焼き,tonpeiyaki.jpg,豚バラを焼いた料理,15000,豚肉,豚バラ
+013,JA,鉄板焼き,アボカド明太子チーズ焼き,avocado_mentaiko_cheese_grill.jpg,アボカドと明太子、チーズを焼いた料理,17000,"乳製品, 魚卵","アボカド, 明太子, チーズ"
+014,JA,鉄板焼き,焼き餃子,yaki_gyoza.jpg,焼き餃子,11000,"小麦粉, 豚肉","小麦粉, 豚肉"
+015,JA,スピード,カニ味噌,kani_miso.jpg,カニ味噌,11000,"貝類, 大豆",カニ味噌
+016,JA,スピード,サザエわさび,snail_wasabi.jpg,サザエとわさびを合わせた料理,9500,"貝類, わさび","サザエ, わさび"
+017,JA,スピード,タコわさび,taco_wasabi.jpg,タコとわさびを合わせた料理,11000,"海産物, わさび","タコ, わさび"
+018,JA,スピード,茹でアスパラガス,boiled_asparagus.jpg,茹でたアスパラガス,10000,-,アスパラガス
+019,JA,スピード,山芋わさび,yam_wasabi.jpg,山芋とわさびを合わせた料理,10000,わさび,"山芋, わさび"
+020,JA,スピード,茹で枝豆,boiled_edamame.jpg,茹でた枝豆,5000,大豆,枝豆
+021,JA,スピード,アボカドサラダ,avocado_salad.jpg,アボカドサラダ,11000,-,アボカド
+022,JA,スピード,エイヒレ焼き,grilled_skate_fin.jpg,エイヒレを焼いた料理,16000,海産物,エイヒレ
+023,JA,スピード,ハニークリームチーズ,honey_cream_cheese.jpg,ハニークリームチーズ,9500,"乳製品, 蜂蜜","クリームチーズ, 蜂蜜"
+024,JA,サラダ,シーザーサラダ,caesar_salad.jpg,シーザードレッシングをかけたサラダ,20000,"乳製品, 卵","シーザードレッシング, レタス"
+025,JA,サラダ,小魚豆腐サラダ,anchovy_tofu_salad.jpg,小魚と豆腐を合わせたサラダ,20000,"魚, 大豆","小魚, 豆腐"
+026,JA,サラダ,カニカマサラダ,crabmeat_salad.jpg,カニカマを合わせたサラダ,20000,カニ,"カニカマ, レタス"
+027,JA,サラダ,ポテトサラダ,potato_salad.jpg,ポテトを合わせたサラダ,8000,-,ポテト
+028,JA,サラダ,明太クリームチーズポテトサラダ,mentaiko_cream_potato_salad.jpg,明太子とクリームチーズを合わせたポテトサラダ,12000,"乳製品, 魚卵","明太子, クリームチーズ, ポテト"
+029,JA,サラダ,トマトサラダ,tomato_salad.jpg,トマトを合わせたサラダ,11000,-,トマト
+030,JA,サラダ,セロリ漬け物,celery_tsukemono.jpg,セロリの漬け物,8000,-,セロリ
+031,JA,サラダ,きゅうり漬け物,cucumber_tsukemono.jpg,きゅうりの漬け物,8000,-,きゅうり
+032,JA,サラダ,たたききゅうり,smashed_cucumber.jpg,たたききゅうり,10000,-,"きゅうり, 海藻"
+033,JA,鍋,すき焼き,sea_bass_sukiyaki.jpg,すき焼き,42000,"牛肉, 大豆","牛肉, 野菜"
+034,JA,鍋,追加メニュー肉,additional_meat.jpg,すき焼き用追加肉,15000,牛肉,肉
+035,JA,鍋,追加メニューうどん,additional_udon_noodles.jpg,うどんの追加,2000,小麦粉,うどん
+036,JA,鍋,長崎ちゃんぽん鍋,nagasaki_champon_soup.jpg,長崎風ちゃんぽん鍋,33000,海産物,"海産物, 野菜"
+037,JA,鍋,おでん鍋,oden_soup.jpg,おでん鍋,33000,"魚, 大豆","おでん, 野菜"
+038,JA,焼き魚,サワラの塩焼き,grilled_spanish_mackerel.jpg,サワラを塩で焼いた料理,16000,魚,"サワラ, 塩"
+039,JA,焼き魚,ししゃもの塩焼き,grilled_shishamo.jpg,ししゃもを塩で焼いた料理,15000,魚,"ししゃも, 塩"
+040,JA,焼き魚,ホッケの塩焼き,grilled_atka_mackerel.jpg,ホッケを塩で焼いた料理,18000,魚,"ホッケ, 塩"
+041,JA,一品料理,和牛タタキ,hanwoo_tataki.jpg,和牛を薄く切って焼いた料理,31000,牛肉,和牛
+042,JA,一品料理,しめ鯖,shime_saba.jpg,鯖を酢で締めた料理,17000,魚,"鯖, 酢"
+043,JA,一品料理,明太子焼き,grilled_mentaiko.jpg,明太子を焼いた料理,19000,魚卵,明太子
+044,JA,一品料理,牛すじの味噌煮込み,hanwoo_tendon_miso_stew.jpg,牛すじを味噌で煮込んだ料理,13000,"牛肉, 大豆","牛すじ, 味噌"
+045,JA,一品料理,あさりの酒蒸し,steamed_clams_sake.jpg,あさりを清酒で蒸した料理,16000,貝類,"あさり, 清酒"
+046,JA,一品料理,あさりバター焼き,garlic_butter_clams.jpg,あさりをバターで焼いた料理,16000,"貝類, 乳製品","あさり, バター"
+047,JA,一品料理,揚げ出し豆腐,agedashi_tofu.jpg,豆腐を揚げてだしにつけた料理,14000,"大豆, 小麦粉","豆腐, だし"
+048,JA,一品料理,茄子の味噌炒め,miso_eggplant_stirfry.jpg,茄子を味噌で炒めた料理,11000,大豆,"茄子, 味噌"
+049,JA,一品料理,茄子の天ぷら,fried_eggplant.jpg,茄子の天ぷら,11000,小麦粉,茄子
+050,JA,一品料理,揚げ出し餅,agedashi_mochi.jpg,餅を揚げてだしにつけた料理,14000,"大豆, 小麦粉, 米","餅, だし"
+051,JA,一品料理,卵焼き,tamagoyaki.jpg,卵を巻いて作った料理,14000,卵,卵
+052,JA,一品料理,明太子卵焼き,mentaiko_tamagoyaki.jpg,明太子を入れた卵焼き,22000,"卵, 魚卵","卵, 明太子"
+053,JA,揚げ物,鶏の唐揚げ,chicken_karaage.jpg,鶏を揚げて作った唐揚げ,22000,"鶏肉, 小麦粉","鶏肉, 小麦粉, 揚げ粉"
+054,JA,揚げ物,イカのゲソ揚げ,fried_squid_legs.jpg,イカのゲソを揚げた料理,19000,"海産物, 小麦粉","イカ, 小麦粉, 揚げ粉"
+055,JA,揚げ物,タコの唐揚げ,fried_octopus.jpg,タコを揚げた料理,13000,"海産物, 小麦粉","タコ, 小麦粉, 揚げ粉"
+056,JA,揚げ物,砂肝の唐揚げ,chicken_gizzard_karaage.jpg,砂肝を揚げた唐揚げ,17000,"鶏肉, 小麦粉","砂肝, 小麦粉, 揚げ粉"
+057,JA,揚げ物,明太マヨ揚げ餅,mentaiko_mayo_honey_mochi_fry.jpg,明太子マヨネーズと蜂蜜を入れた揚げ餅,14000,"魚卵, 小麦粉, 蜂蜜","明太子, マヨネーズ, 餅, 蜂蜜"
+058,JA,揚げ物,ゴボウスティック,fried_burdock.jpg,ゴボウを揚げた料理,16000,小麦粉,"ゴボウ, 小麦粉, 揚げ粉"
+059,JA,揚げ物,さきイカの天ぷら,tempura_dried_squid.jpg,さきイカの天ぷら,14000,"海産物, 小麦粉","さきイカ, 小麦粉, 揚げ粉"
+060,JA,揚げ物,ポテトフライ,french_fries.jpg,ポテトフライ,11000,-,"ポテト, 塩, 揚げ油"
+061,JA,揚げ物,コウイカの天ぷら,tempura_cuttlefish.jpg,コウイカの天ぷら,25000,"海産物, 小麦粉","コウイカ, 小麦粉, 揚げ粉"
+062,JA,揚げ物,カキフライ,fried_oysters.jpg,カキフライ,15000,"貝類, 小麦粉","カキ, 小麦粉, 揚げ粉"
+063,JA,揚げ物,アジフライ,fried_horse_mackerel.jpg,アジフライ,20000,"魚, 小麦粉","アジ, 小麦粉, 揚げ粉"
+064,JA,揚げ物,エビクリームコロッケ,shrimp_cream_croquette.jpg,エビとクリームを入れたコロッケ,21000,"海産物, 乳製品, 小麦粉","エビ, クリーム, 小麦粉, 揚げ粉"
+001,EN,Teppanyaki,Grilled Scallop with Butter,garlic_butter_scallops.jpg,Grilled scallop with butter,31000,"Shellfish, Dairy","Scallop, Butter"
+002,EN,Teppanyaki,Grilled Abalone with Butter,garlic_butter_abalone.jpg,Grilled abalone with butter,32000,"Shellfish, Dairy","Abalone, Butter"
+003,EN,Teppanyaki,Grilled Korean Beef Sirloin,hanwoo_ribeye_steak.jpg,Grilled Korean beef sirloin,33000,Beef,Korean Beef Sirloin
+004,EN,Teppanyaki,Grilled Yam with Butter,butter_grilled_yam.jpg,Grilled yam with butter,15000,Dairy,"Yam, Butter"
+005,EN,Teppanyaki,Stir-fried Leek with Egg,garlic_chive_egg_stirfry.jpg,Stir-fried leek with egg,11000,Egg,"Leek, Egg"
+006,EN,Teppanyaki,Grilled Cuttlefish with Butter,garlic_butter_cuttlefish.jpg,Grilled cuttlefish with butter,26000,"Seafood, Dairy","Cuttlefish, Butter"
+007,EN,Teppanyaki,Grilled Korean Beef Tripe,hanwoo_tripe_grill.jpg,Grilled Korean beef tripe,24000,Beef,Korean Beef Tripe
+008,EN,Teppanyaki,Grilled Asparagus with Butter,garlic_butter_asparagus.jpg,Grilled asparagus with butter,19000,Dairy,"Asparagus, Butter"
+009,EN,Teppanyaki,Grilled Chicken with Garlic,garlic_grilled_chicken.jpg,Grilled chicken with garlic,20000,Chicken,"Chicken, Garlic"
+010,EN,Teppanyaki,Grilled Potato with Bacon and Cheese,potato_bacon_cheese_bake.jpg,Grilled potato with bacon and cheese,15000,"Pork, Dairy","Potato, Bacon, Cheese"
+011,EN,Teppanyaki,Dongari Hamburger Steak,dongari_hamburger_steak.jpg,Dongari-style hamburger steak,20000,"Beef, Egg","Beef, Egg"
+012,EN,Teppanyaki,Grilled Pork Belly,tonpeiyaki.jpg,Grilled pork belly,15000,Pork,Pork Belly
+013,EN,Teppanyaki,Grilled Avocado with Pollock Roe and Cheese,avocado_mentaiko_cheese_grill.jpg,Grilled avocado with pollock roe and cheese,17000,"Dairy, Fish Roe","Avocado, Pollock Roe, Cheese"
+014,EN,Teppanyaki,Grilled Dumplings,yaki_gyoza.jpg,Grilled dumplings,11000,"Wheat, Pork","Wheat, Pork"
+015,EN,Speed Dish,Crab Miso,kani_miso.jpg,Crab miso,11000,"Shellfish, Soy","Crab, Miso"
+016,EN,Speed Dish,Turban Shell with Wasabi,snail_wasabi.jpg,Turban shell with wasabi,9500,"Shellfish, Wasabi","Turban Shell, Wasabi"
+017,EN,Speed Dish,Octopus with Wasabi,taco_wasabi.jpg,Octopus with wasabi,11000,"Seafood, Wasabi","Octopus, Wasabi"
+018,EN,Speed Dish,Boiled Asparagus,boiled_asparagus.jpg,Boiled asparagus,10000,-,Asparagus
+019,EN,Speed Dish,Yam with Wasabi,yam_wasabi.jpg,Yam with wasabi,10000,Wasabi,"Yam, Wasabi"
+020,EN,Speed Dish,Boiled Edamame,boiled_edamame.jpg,Boiled edamame,5000,Soy,Edamame
+021,EN,Speed Dish,Avocado Salad,avocado_salad.jpg,Avocado salad,11000,-,Avocado
+022,EN,Speed Dish,Grilled Stingray Fin,grilled_skate_fin.jpg,Grilled stingray fin,16000,Seafood,Stingray Fin
+023,EN,Speed Dish,Honey Cream Cheese,honey_cream_cheese.jpg,Honey cream cheese,9500,"Dairy, Honey","Cream Cheese, Honey"
+024,EN,Salad,Caesar Salad,caesar_salad.jpg,Caesar salad with Caesar dressing,20000,"Dairy, Egg","Caesar Dressing, Lettuce"
+025,EN,Salad,Small Anchovy Tofu Salad,anchovy_tofu_salad.jpg,Salad with small anchovy and tofu,20000,"Fish, Soy","Anchovy, Tofu"
+026,EN,Salad,Crab Stick Salad,crabmeat_salad.jpg,Salad with crab stick,20000,Crab,"Crab Stick, Lettuce"
+027,EN,Salad,Potato Salad,potato_salad.jpg,Salad with potato,8000,-,Potato
+028,EN,Salad,Pollock Roe Cream Cheese Potato Salad,mentaiko_cream_potato_salad.jpg,Potato salad with pollock roe and cream cheese,12000,"Dairy, Fish Roe","Pollock Roe, Cream Cheese, Potato"
+029,EN,Salad,Tomato Salad,tomato_salad.jpg,Salad with tomato,11000,-,Tomato
+030,EN,Salad,Pickled Celery,celery_tsukemono.jpg,Pickled celery,8000,-,Celery
+031,EN,Salad,Pickled Cucumber,cucumber_tsukemono.jpg,Pickled cucumber,8000,-,Cucumber
+032,EN,Salad,Smashed Cucumber Salad,smashed_cucumber.jpg,Smashed cucumber salad,10000,-,"Cucumber, Seaweed"
+033,EN,Hot Pot,Sukiyaki,sea_bass_sukiyaki.jpg,Dongari-style sukiyaki,42000,"Beef, Soy","Beef, Vegetables"
+034,EN,Hot Pot,Extra Meat,additional_meat.jpg,Extra meat for sukiyaki,15000,Beef,Meat
+035,EN,Hot Pot,Extra Udon Noodles,additional_udon_noodles.jpg,Extra udon noodles,2000,Wheat,Udon Noodles
+036,EN,Hot Pot,Nagasaki Jjampong Soup,nagasaki_champon_soup.jpg,Nagasaki-style jjampong soup,33000,Seafood,"Seafood, Vegetables"
+037,EN,Hot Pot,Fish Cake Soup,oden_soup.jpg,Fish cake soup,33000,"Fish, Soy","Fish Cake, Vegetables"
+038,EN,Grilled Fish,Grilled Spanish Mackerel with Salt,grilled_spanish_mackerel.jpg,Grilled Spanish mackerel with salt,16000,Fish,"Spanish Mackerel, Salt"
+039,EN,Grilled Fish,Grilled Shishamo with Salt,grilled_shishamo.jpg,Grilled shishamo with salt,15000,Fish,"Shishamo, Salt"
+040,EN,Grilled Fish,Grilled Atka Mackerel with Salt,grilled_atka_mackerel.jpg,Grilled atka mackerel with salt,18000,Fish,"Atka Mackerel, Salt"
+041,EN,A La Carte,Korean Beef Tataki,hanwoo_tataki.jpg,Thinly sliced grilled Korean beef,31000,Beef,Korean Beef
+042,EN,A La Carte,Vinegared Mackerel,shime_saba.jpg,Vinegared mackerel,17000,Fish,"Mackerel, Vinegar"
+043,EN,A La Carte,Grilled Pollock Roe,grilled_mentaiko.jpg,Grilled pollock roe,19000,Fish Roe,Pollock Roe
+044,EN,A La Carte,Braised Beef Tendon in Soybean Paste,hanwoo_tendon_miso_stew.jpg,Braised beef tendon in soybean paste,13000,"Beef, Soy","Beef Tendon, Soybean Paste"
+045,EN,A La Carte,Steamed Clams in Cheongju,steamed_clams_sake.jpg,Steamed clams in Cheongju,16000,Shellfish,"Clams, Cheongju"
+046,EN,A La Carte,Grilled Clams with Butter,garlic_butter_clams.jpg,Grilled clams with butter,16000,"Shellfish, Dairy","Clams, Butter"
+047,EN,A La Carte,Deep-Fried Tofu in Dashi,agedashi_tofu.jpg,Deep-fried tofu in dashi,14000,"Soy, Wheat","Tofu, Dashi"
+048,EN,A La Carte,Stir-fried Eggplant in Soybean Paste,miso_eggplant_stirfry.jpg,Stir-fried eggplant in soybean paste,11000,Soy,"Eggplant, Soybean Paste"
+049,EN,A La Carte,Fried Eggplant,fried_eggplant.jpg,Fried eggplant,11000,Wheat,Eggplant
+050,EN,A La Carte,Deep-Fried Mochi in Dashi,agedashi_mochi.jpg,Deep-fried mochi in dashi,14000,"Soy, Wheat, Rice","Mochi, Dashi"
+051,EN,A La Carte,Rolled Omelette,tamagoyaki.jpg,Rolled omelette,14000,Egg,Egg
+052,EN,A La Carte,Rolled Omelette with Pollock Roe,mentaiko_tamagoyaki.jpg,Rolled omelette with pollock roe,22000,"Egg, Fish Roe","Egg, Pollock Roe"
+053,EN,Fried Dish,Chicken Karaage,chicken_karaage.jpg,Fried chicken karaage,22000,"Chicken, Wheat","Chicken, Wheat, Frying Powder"
+054,EN,Fried Dish,Fried Squid Tentacles,fried_squid_legs.jpg,Fried squid tentacles,19000,"Seafood, Wheat","Squid, Wheat, Frying Powder"
+055,EN,Fried Dish,Fried Octopus,fried_octopus.jpg,Fried octopus,13000,"Seafood, Wheat","Octopus, Wheat, Frying Powder"
+056,EN,Fried Dish,Fried Chicken Gizzards,chicken_gizzard_karaage.jpg,Fried chicken gizzards karaage,17000,"Chicken, Wheat","Chicken Gizzards, Wheat, Frying Powder"
+057,EN,Fried Dish,Fried Mochi with Pollock Roe Mayonnaise and Honey,mentaiko_mayo_honey_mochi_fry.jpg,Fried mochi with pollock roe mayonnaise and honey,14000,"Fish Roe, Wheat, Honey","Pollock Roe, Mayonnaise, Mochi, Honey"
+058,EN,Fried Dish,Fried Burdock Sticks,fried_burdock.jpg,Fried burdock sticks,16000,Wheat,"Burdock, Wheat, Frying Powder"
+059,EN,Fried Dish,Fried Shredded Dried Squid,tempura_dried_squid.jpg,Fried shredded dried squid,14000,"Seafood, Wheat","Shredded Dried Squid, Wheat, Frying Powder"
+060,EN,Fried Dish,French Fries,french_fries.jpg,French fries,11000,-,"Potatoes, Salt, Frying Oil"
+061,EN,Fried Dish,Fried Cuttlefish,tempura_cuttlefish.jpg,Fried cuttlefish,25000,"Seafood, Wheat","Cuttlefish, Wheat, Frying Powder"
+062,EN,Fried Dish,Fried Oysters,fried_oysters.jpg,Fried oysters,15000,"Shellfish, Wheat","Oysters, Wheat, Frying Powder"
+063,EN,Fried Dish,Fried Horse Mackerel,fried_horse_mackerel.jpg,Fried horse mackerel,20000,"Fish, Wheat","Horse Mackerel, Wheat, Frying Powder"
+064,EN,Fried Dish,Shrimp Cream Croquettes,shrimp_cream_croquette.jpg,Shrimp cream croquettes,21000,"Seafood, Dairy, Wheat","Shrimp, Cream, Wheat, Frying Powder"
+001,YUE,鐵板燒,牛油煎帶子,garlic_butter_scallops.jpg,用牛油煎的帶子,31000,"貝類, 乳製品","帶子, 牛油"
+002,YUE,鐵板燒,牛油煎鮑魚,garlic_butter_abalone.jpg,用牛油煎的鮑魚,32000,"貝類, 乳製品","鮑魚, 牛油"
+003,YUE,鐵板燒,煎韓牛西冷,hanwoo_ribeye_steak.jpg,煎韓國牛西冷肉,33000,牛肉,韓牛西冷
+004,YUE,鐵板燒,牛油煎山藥,butter_grilled_yam.jpg,用牛油煎的山藥,15000,乳製品,"山藥, 牛油"
+005,YUE,鐵板燒,韭菜炒蛋,garlic_chive_egg_stirfry.jpg,韭菜炒蛋,11000,雞蛋,"韭菜, 雞蛋"
+006,YUE,鐵板燒,牛油煎墨魚,garlic_butter_cuttlefish.jpg,用牛油煎的墨魚,26000,"海鮮, 乳製品","墨魚, 牛油"
+007,YUE,鐵板燒,煎韓牛大腸,hanwoo_tripe_grill.jpg,煎韓國牛大腸,24000,牛肉,韓牛大腸
+008,YUE,鐵板燒,牛油煎蘆筍,garlic_butter_asparagus.jpg,用牛油煎的蘆筍,19000,乳製品,"蘆筍, 牛油"
+009,YUE,鐵板燒,蒜香煎雞肉,garlic_grilled_chicken.jpg,煎蒜香雞肉,20000,雞肉,"雞肉, 蒜"
+010,YUE,鐵板燒,焗薯條煙肉芝士,potato_bacon_cheese_bake.jpg,焗薯條、煙肉和芝士,15000,"豬肉, 乳製品","薯條, 煙肉, 芝士"
+011,YUE,鐵板燒,東亞風漢堡扒,dongari_hamburger_steak.jpg,東亞風格的漢堡扒,20000,"牛肉, 雞蛋","牛肉, 雞蛋"
+012,YUE,鐵板燒,煎豬腩肉,tonpeiyaki.jpg,煎豬腩肉,15000,豬肉,豬腩肉
+013,YUE,鐵板燒,焗牛油果明太子芝士,avocado_mentaiko_cheese_grill.jpg,焗牛油果、明太子和芝士,17000,"乳製品, 魚籽","牛油果, 明太子, 芝士"
+014,YUE,鐵板燒,煎餃子,yaki_gyoza.jpg,煎餃子,11000,"小麥粉, 豬肉","小麥粉, 豬肉"
+015,YUE,快手菜,蟹味噌,kani_miso.jpg,蟹味噌,11000,"貝類, 大豆",蟹味噌
+016,YUE,快手菜,螺肉配芥末,snail_wasabi.jpg,螺肉配芥末,9500,"貝類, 芥末","螺肉, 芥末"
+017,YUE,快手菜,八爪魚配芥末,taco_wasabi.jpg,八爪魚配芥末,11000,"海鮮, 芥末","八爪魚, 芥末"
+018,YUE,快手菜,煮蘆筍,boiled_asparagus.jpg,煮蘆筍,10000,-,蘆筍
+019,YUE,快手菜,山藥配芥末,yam_wasabi.jpg,山藥配芥末,10000,芥末,"山藥, 芥末"
+020,YUE,快手菜,煮毛豆,boiled_edamame.jpg,煮毛豆,5000,大豆,毛豆
+021,YUE,快手菜,牛油果沙律,avocado_salad.jpg,牛油果沙律,11000,-,牛油果
+022,YUE,快手菜,燒魷魚鬚,grilled_skate_fin.jpg,燒魷魚鬚,16000,海鮮,魷魚鬚
+023,YUE,快手菜,蜜糖忌廉芝士,honey_cream_cheese.jpg,蜜糖忌廉芝士,9500,"乳製品, 蜂蜜","忌廉芝士, 蜂蜜"
+024,YUE,沙律,凱撒沙律,caesar_salad.jpg,凱撒沙律配凱撒醬,20000,"乳製品, 雞蛋","凱撒醬, 生菜"
+025,YUE,沙律,小魚乾豆腐沙律,anchovy_tofu_salad.jpg,小魚乾豆腐沙律,20000,"魚, 大豆","小魚乾, 豆腐"
+026,YUE,沙律,蟹柳沙律,crabmeat_salad.jpg,蟹柳沙律,20000,蟹肉,"蟹柳, 生菜"
+027,YUE,沙律,薯仔沙律,potato_salad.jpg,薯仔沙律,8000,-,薯仔
+028,YUE,沙律,明太子忌廉芝士薯仔沙律,mentaiko_cream_potato_salad.jpg,明太子忌廉芝士薯仔沙律,12000,"乳製品, 魚籽","明太子, 忌廉芝士, 薯仔"
+029,YUE,沙律,蕃茄沙律,tomato_salad.jpg,蕃茄沙律,11000,-,蕃茄
+030,YUE,沙律,醃西芹,celery_tsukemono.jpg,醃製的西芹,8000,-,西芹
+031,YUE,沙律,醃青瓜,cucumber_tsukemono.jpg,醃製的青瓜,8000,-,青瓜
+032,YUE,沙律,拍青瓜沙律,smashed_cucumber.jpg,拍青瓜沙律,10000,-,"青瓜, 海藻"
+033,YUE,火鍋,壽喜燒,sea_bass_sukiyaki.jpg,東亞風格壽喜燒,42000,"牛肉, 大豆","牛肉, 蔬菜"
+034,YUE,火鍋,加肉,additional_meat.jpg,壽喜燒加肉,15000,牛肉,牛肉
+035,YUE,火鍋,加烏冬,additional_udon_noodles.jpg,加烏冬,2000,小麥粉,烏冬
+036,YUE,火鍋,長崎什錦湯,nagasaki_champon_soup.jpg,長崎風什錦湯,33000,海鮮,"海鮮, 蔬菜"
+037,YUE,火鍋,魚蛋湯,oden_soup.jpg,魚蛋湯,33000,"魚, 大豆","魚蛋, 蔬菜"
+038,YUE,燒魚,鹽燒鰆魚,grilled_spanish_mackerel.jpg,鹽燒鰆魚,16000,魚,"鰆魚, 鹽"
+039,YUE,燒魚,鹽燒柳葉魚,grilled_shishamo.jpg,鹽燒柳葉魚,15000,魚,"柳葉魚, 鹽"
+040,YUE,燒魚,鹽燒灰鰭,grilled_atka_mackerel.jpg,鹽燒灰鰭,18000,魚,"灰鰭, 鹽"
+041,YUE,精選料理,韓牛他他燒,hanwoo_tataki.jpg,韓牛他他燒,31000,牛肉,韓牛
+042,YUE,精選料理,醋青花魚,shime_saba.jpg,醋青花魚,17000,魚,"青花魚, 醋"
+043,YUE,精選料理,燒明太子,grilled_mentaiko.jpg,燒明太子,19000,魚籽,明太子
+044,YUE,精選料理,味噌燉牛筋,hanwoo_tendon_miso_stew.jpg,味噌燉牛筋,13000,"牛肉, 大豆","牛筋, 味噌"
+045,YUE,精選料理,清酒蒸蜆,steamed_clams_sake.jpg,清酒蒸蜆,16000,貝類,"蜆, 清酒"
+046,YUE,精選料理,牛油煎蜆,garlic_butter_clams.jpg,牛油煎蜆,16000,"貝類, 乳製品","蜆, 牛油"
+047,YUE,精選料理,炸豆腐,agedashi_tofu.jpg,炸豆腐,14000,"大豆, 小麥粉","豆腐, 鰹魚湯"
+048,YUE,精選料理,味噌炒茄子,miso_eggplant_stirfry.jpg,味噌炒茄子,11000,大豆,"茄子, 味噌"
+049,YUE,精選料理,茄子天婦羅,fried_eggplant.jpg,茄子天婦羅,11000,小麥粉,茄子
+050,YUE,精選料理,炸年糕,agedashi_mochi.jpg,炸年糕,14000,"大豆, 小麥粉, 米","年糕, 鰹魚湯"
+051,YUE,精選料理,蛋卷,tamagoyaki.jpg,蛋卷,14000,雞蛋,蛋
+052,YUE,精選料理,明太子蛋卷,mentaiko_tamagoyaki.jpg,明太子蛋卷,22000,"雞蛋, 魚籽","蛋, 明太子"
+053,YUE,炸物,炸雞唐揚,chicken_karaage.jpg,炸雞唐揚,22000,"雞肉, 小麥粉","雞肉, 小麥粉, 炸粉"
+054,YUE,炸物,炸魷魚鬚,fried_squid_legs.jpg,炸魷魚鬚,19000,"海鮮, 小麥粉","魷魚鬚, 小麥粉, 炸粉"
+055,YUE,炸物,炸八爪魚,fried_octopus.jpg,炸八爪魚,13000,"海鮮, 小麥粉","八爪魚, 小麥粉, 炸粉"
+056,YUE,炸物,炸雞腎,chicken_gizzard_karaage.jpg,炸雞腎唐揚,17000,"雞肉, 小麥粉","雞腎, 小麥粉, 炸粉"
+057,YUE,炸物,蜜糖明太子炸年糕,mentaiko_mayo_honey_mochi_fry.jpg,蜜糖明太子炸年糕,14000,"魚籽, 小麥粉, 蜂蜜","明太子, 蛋黃醬, 年糕, 蜂蜜"
+058,YUE,炸物,炸牛蒡條,fried_burdock.jpg,炸牛蒡條,16000,小麥粉,"牛蒡條, 小麥粉, 炸粉"
+059,YUE,炸物,炸墨魚絲天婦羅,tempura_dried_squid.jpg,炸墨魚絲天婦羅,14000,"海鮮, 小麥粉","墨魚絲, 小麥粉, 炸粉"
+060,YUE,炸物,薯條,french_fries.jpg,炸薯條,11000,-,"薯條, 鹽, 炸油"
+061,YUE,炸物,炸墨魚天婦羅,tempura_cuttlefish.jpg,炸墨魚天婦羅,25000,"海鮮, 小麥粉","墨魚, 小麥粉, 炸粉"
+062,YUE,炸物,炸牡蠣,fried_oysters.jpg,炸牡蠣,15000,"貝類, 小麥粉","牡蠣, 小麥粉, 炸粉"
+063,YUE,炸物,炸竹莢魚,fried_horse_mackerel.jpg,炸竹莢魚,20000,"魚, 小麥粉","竹莢魚, 小麥粉, 炸粉"
+064,YUE,炸物,炸蝦忌廉可樂餅,shrimp_cream_croquette.jpg,炸蝦忌廉可樂餅,21000,"海鮮, 乳製品, 小麥粉","蝦, 忌廉, 小麥粉, 炸粉"
+001,CN,铁板烧,牛油煎带子,garlic_butter_scallops.jpg,用牛油煎的带子,31000,"贝类, 乳制品","带子, 牛油"
+002,CN,铁板烧,牛油煎鲍鱼,garlic_butter_abalone.jpg,用牛油煎的鲍鱼,32000,"贝类, 乳制品","鲍鱼, 牛油"
+003,CN,铁板烧,煎韩牛西冷,hanwoo_ribeye_steak.jpg,煎韩国牛西冷肉,33000,牛肉,韩牛西冷
+004,CN,铁板烧,牛油煎山药,butter_grilled_yam.jpg,用牛油煎的山药,15000,乳制品,"山药, 牛油"
+005,CN,铁板烧,韭菜炒蛋,garlic_chive_egg_stirfry.jpg,韭菜炒蛋,11000,鸡蛋,"韭菜, 鸡蛋"
+006,CN,铁板烧,牛油煎墨鱼,garlic_butter_cuttlefish.jpg,用牛油煎的墨鱼,26000,"海鲜, 乳制品","墨鱼, 牛油"
+007,CN,铁板烧,煎韩牛大肠,hanwoo_tripe_grill.jpg,煎韩国牛大肠,24000,牛肉,韩牛大肠
+008,CN,铁板烧,牛油煎芦笋,garlic_butter_asparagus.jpg,用牛油煎的芦笋,19000,乳制品,"芦笋, 牛油"
+009,CN,铁板烧,蒜香煎鸡肉,garlic_grilled_chicken.jpg,煎蒜香鸡肉,20000,鸡肉,"鸡肉, 蒜"
+010,CN,铁板烧,焗薯条培根芝士,potato_bacon_cheese_bake.jpg,焗薯条、培根和芝士,15000,"猪肉, 乳制品","薯条, 培根, 芝士"
+011,CN,铁板烧,东亚风汉堡扒,dongari_hamburger_steak.jpg,东亚风格的汉堡扒,20000,"牛肉, 鸡蛋","牛肉, 鸡蛋"
+012,CN,铁板烧,煎猪腩肉,tonpeiyaki.jpg,煎猪腩肉,15000,猪肉,猪腩肉
+013,CN,铁板烧,焗牛油果明太子芝士,avocado_mentaiko_cheese_grill.jpg,焗牛油果、明太子和芝士,17000,"乳制品, 鱼子","牛油果, 明太子, 芝士"
+014,CN,铁板烧,煎饺子,yaki_gyoza.jpg,煎饺子,11000,"小麦粉, 猪肉","小麦粉, 猪肉"
+015,CN,快手菜,蟹味噌,kani_miso.jpg,蟹味噌,11000,"贝类, 大豆",蟹味噌
+016,CN,快手菜,螺肉配芥末,snail_wasabi.jpg,螺肉配芥末,9500,"贝类, 芥末","螺肉, 芥末"
+017,CN,快手菜,章鱼配芥末,taco_wasabi.jpg,章鱼配芥末,11000,"海鲜, 芥末","章鱼, 芥末"
+018,CN,快手菜,煮芦笋,boiled_asparagus.jpg,煮芦笋,10000,-,芦笋
+019,CN,快手菜,山药配芥末,yam_wasabi.jpg,山药配芥末,10000,芥末,"山药, 芥末"
+020,CN,快手菜,煮毛豆,boiled_edamame.jpg,煮毛豆,5000,大豆,毛豆
+021,CN,快手菜,牛油果沙拉,avocado_salad.jpg,牛油果沙拉,11000,-,牛油果
+022,CN,快手菜,烤鳐鱼鳍,grilled_skate_fin.jpg,烤鳐鱼鳍,16000,海鲜,鳐鱼鳍
+023,CN,快手菜,蜂蜜奶油芝士,honey_cream_cheese.jpg,蜂蜜奶油芝士,9500,"乳制品, 蜂蜜","奶油芝士, 蜂蜜"
+024,CN,沙拉,凯撒沙拉,caesar_salad.jpg,凯撒沙拉配凯撒酱,20000,"乳制品, 鸡蛋","凯撒酱, 生菜"
+025,CN,沙拉,小鱼干豆腐沙拉,anchovy_tofu_salad.jpg,小鱼干豆腐沙拉,20000,"鱼, 大豆","小鱼干, 豆腐"
+026,CN,沙拉,蟹柳沙拉,crabmeat_salad.jpg,蟹柳沙拉,20000,蟹肉,"蟹柳, 生菜"
+027,CN,沙拉,土豆沙拉,potato_salad.jpg,土豆沙拉,8000,-,土豆
+028,CN,沙拉,明太子奶油芝士土豆沙拉,mentaiko_cream_potato_salad.jpg,明太子奶油芝士土豆沙拉,12000,"乳制品, 鱼子","明太子, 奶油芝士, 土豆"
+029,CN,沙拉,番茄沙拉,tomato_salad.jpg,番茄沙拉,11000,-,番茄
+030,CN,沙拉,腌西芹,celery_tsukemono.jpg,腌制的西芹,8000,-,西芹
+031,CN,沙拉,腌黄瓜,cucumber_tsukemono.jpg,腌制的黄瓜,8000,-,黄瓜
+032,CN,沙拉,拍黄瓜沙拉,smashed_cucumber.jpg,拍黄瓜沙拉,10000,-,"黄瓜, 海藻"
+033,CN,火锅,寿喜烧,sea_bass_sukiyaki.jpg,东亚风格寿喜烧,42000,"牛肉, 大豆","牛肉, 蔬菜"
+034,CN,火锅,加肉,additional_meat.jpg,寿喜烧加肉,15000,牛肉,牛肉
+035,CN,火锅,加乌冬,additional_udon_noodles.jpg,加乌冬,2000,小麦粉,乌冬
+036,CN,火锅,长崎什锦汤,nagasaki_champon_soup.jpg,长崎风什锦汤,33000,海鲜,"海鲜, 蔬菜"
+037,CN,火锅,鱼丸汤,oden_soup.jpg,鱼丸汤,33000,"鱼, 大豆","鱼丸, 蔬菜"
+038,CN,烤鱼,盐烤鰆鱼,grilled_spanish_mackerel.jpg,盐烤鰆鱼,16000,鱼,"鰆鱼, 盐"
+039,CN,烤鱼,盐烤柳叶鱼,grilled_shishamo.jpg,盐烤柳叶鱼,15000,鱼,"柳叶鱼, 盐"
+040,CN,烤鱼,盐烤灰鳕鱼,grilled_atka_mackerel.jpg,盐烤灰鳕鱼,18000,鱼,"灰鳕鱼, 盐"
+041,CN,精选料理,韩牛他他烧,hanwoo_tataki.jpg,韩牛他他烧,31000,牛肉,韩牛
+042,CN,精选料理,醋青花鱼,shime_saba.jpg,醋青花鱼,17000,鱼,"青花鱼, 醋"
+043,CN,精选料理,烤明太子,grilled_mentaiko.jpg,烤明太子,19000,鱼子,明太子
+044,CN,精选料理,味噌炖牛筋,hanwoo_tendon_miso_stew.jpg,味噌炖牛筋,13000,"牛肉, 大豆","牛筋, 味噌"
+045,CN,精选料理,清酒蒸蛤蜊,steamed_clams_sake.jpg,清酒蒸蛤蜊,16000,贝类,"蛤蜊, 清酒"
+046,CN,精选料理,牛油煎蛤蜊,garlic_butter_clams.jpg,牛油煎蛤蜊,16000,"贝类, 乳制品","蛤蜊, 牛油"
+047,CN,精选料理,炸豆腐,agedashi_tofu.jpg,炸豆腐,14000,"大豆, 小麦粉","豆腐, 木鱼汤"
+048,CN,精选料理,味噌炒茄子,miso_eggplant_stirfry.jpg,味噌炒茄子,11000,大豆,"茄子, 味噌"
+049,CN,精选料理,茄子天妇罗,fried_eggplant.jpg,茄子天妇罗,11000,小麦粉,茄子
+050,CN,精选料理,炸年糕,agedashi_mochi.jpg,炸年糕,14000,"大豆, 小麦粉, 米","年糕, 木鱼汤"
+051,CN,精选料理,蛋卷,tamagoyaki.jpg,蛋卷,14000,鸡蛋,蛋
+052,CN,精选料理,明太子蛋卷,mentaiko_tamagoyaki.jpg,明太子蛋卷,22000,"鸡蛋, 鱼子","蛋, 明太子"
+053,CN,炸物,炸鸡唐扬,chicken_karaage.jpg,炸鸡唐扬,22000,"鸡肉, 小麦粉","鸡肉, 小麦粉, 炸粉"
+054,CN,炸物,炸鱿鱼须,fried_squid_legs.jpg,炸鱿鱼须,19000,"海鲜, 小麦粉","鱿鱼须, 小麦粉, 炸粉"
+055,CN,炸物,炸章鱼,fried_octopus.jpg,炸章鱼,13000,"海鲜, 小麦粉","章鱼, 小麦粉, 炸粉"
+056,CN,炸物,炸鸡肾,chicken_gizzard_karaage.jpg,炸鸡肾唐扬,17000,"鸡肉, 小麦粉","鸡肾, 小麦粉, 炸粉"
+057,CN,炸物,蜂蜜明太子炸年糕,mentaiko_mayo_honey_mochi_fry.jpg,蜂蜜明太子炸年糕,14000,"鱼子, 小麦粉, 蜂蜜","明太子, 蛋黄酱, 年糕, 蜂蜜"
+058,CN,炸物,炸牛蒡条,fried_burdock.jpg,炸牛蒡条,16000,小麦粉,"牛蒡条, 小麦粉, 炸粉"
+059,CN,炸物,炸墨鱼丝天妇罗,tempura_dried_squid.jpg,炸墨鱼丝天妇罗,14000,"海鲜, 小麦粉","墨鱼丝, 小麦粉, 炸粉"
+060,CN,炸物,薯条,french_fries.jpg,炸薯条,11000,-,"薯条, 盐, 炸油"
+061,CN,炸物,炸墨鱼天妇罗,tempura_cuttlefish.jpg,炸墨鱼天妇罗,25000,"海鲜, 小麦粉","墨鱼, 小麦粉, 炸粉"
+062,CN,炸物,炸牡蛎,fried_oysters.jpg,炸牡蛎,15000,"贝类, 小麦粉","牡蛎, 小麦粉, 炸粉"
+063,CN,炸物,炸竹荚鱼,fried_horse_mackerel.jpg,炸竹荚鱼,20000,"鱼, 小麦粉","竹荚鱼, 小麦粉, 炸粉"
+064,CN,炸物,炸虾奶油可乐饼,shrimp_cream_croquette.jpg,炸虾奶油可乐饼,21000,"海鲜, 乳制品, 小麦粉","虾, 奶油, 小麦粉, 炸粉"
+사쿠라브리즈

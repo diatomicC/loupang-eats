@@ -1,0 +1,132 @@
+ID,Language,Category,Food,ImageFileName,Description,Price,Restrictions,Ingredient
+1,KR,피자,마르게리따,margherita_pizza.jpg,토마토 소스와 바질로 맛을 낸 대표적인 이탈리아 피자,19900,"조개류, 유제품","가리비, 버터"
+2,KR,피자,후레시 루꼴라 피자,fresh_rucola_pizza.jpg,얇은 도우에 토마토소스 베이컨과 치즈로 맛을 낸 고소한 피자,21900,"조개류, 유제품","전복, 버터"
+3,KR,피자,페페로니 피자,pepperoni_pizza.jpg,이탈리아 고추와 페페로니로 맛을 낸 매콤한 피자,21900,소고기,한우 등심
+4,KR,피자,이탈리안 포르마지오,italian_formaggio_pizza.jpg,"까망베르, 에멘탈, 파르미지아노, 모짜렐라 등 다양한 치즈가 녹아 있는 향이 좋은 피자",20900,유제품,"모짜렐라 치즈, 파르미지아노 치즈, 에멘탈 치즈, 까망베르 치즈"
+5,KR,피자,고르곤졸라 에 토마토 피자,gorgonzola_pomodoro_pizza.jpg,고르곤졸라와 방울토마토의 짭조름한 플레이 짝이 없는 단짠한 피자,21900,유제품,"고르곤졸라 치즈, 방울토마토, 꿀"
+6,KR,피자,샐러드 피자,salad_pizza.jpg,"야채와 치즈를 얹어 구워낸 후 소스와 야채, 토마토, 옥수수 토핑이 한 번 더 얹어져서 스페셜한 피자",21900,유제품,"치즈, 혼합 야채, 토마토, 옥수수"
+7,KR,피자,고구마 피자,sweet_potato_pizza.jpg,달콤한 고구마퓨레와 치즈에 베이컨을 얹어 구워낸 피자,21900,유제품,"고구마퓨레, 베이컨, 체다치즈"
+8,KR,스테이크,등심 스테이크,sirloin_steak.jpg,"그릴에 구워 불맛 가득한 등심 스테이크와 구운 웨지감자, 로스팅 버섯, 신선한 루꼴라",39900,소고기,"한우 등심, 웨지감자, 로스팅 버섯, 루꼴라"
+9,KR,파스타,스파뉴 포모도로 파스타,spagnew_pomodoro.jpg,상큼한 토마토소스와 고소한 모짜렐라 치즈와 향긋한 바질로 맛을 낸 파스타,15000,유제품,"모짜렐라 치즈, 토마토 소스, 바질"
+10,KR,파스타,볼로네제 미트 소스 파스타,bolognese_meat_sauce_pasta.jpg,다진 소고기가 푸짐하게 들어있는 토마토 미트소스 파스타,17000,소고기,"다진 소고기, 토마토 소스, 파르미지아노 치즈, 바질"
+11,KR,파스타,아마트리치아나 파스타,amatriciana_pasta.jpg,고소한 베이컨과 매콤한 칠리의 토마토 소스가 어우러진 파스타,18900,유제품,"베이컨, 칠리, 토마토 소스, 파르미지아노 치즈"
+12,KR,파스타,새우칠리 파스타,shrimp_chili_pasta.jpg,맛있는 새우와 매콤한 칠리 토마토 소스가 어우러진 새우 칠리 파스타,19900,"해산물, 유제품","새우, 칠리, 토마토 소스"
+13,KR,파스타,스파게티 마리나라 파스타,spaghetti_marinara.jpg,"새우, 홍합, 바지락, 모시조개 등 풍부한 해산물이 들어간 토마토 소스 스파게티",19900,"해산물, 유제품","새우, 홍합, 바지락, 모시조개, 토마토 소스"
+14,KR,리조또,마레 토마토 리조또,mare_pomodoro_risotto.jpg,"각종 해산물, 토마토소스와 쌀로 맛을 낸 이태리식 볶음밥",18900,"해산물, 유제품","새우, 홍합, 바지락, 토마토 소스"
+15,KR,리조또,마레 크림 리조또,crema_di_mare_risotto.jpg,"새우, 홍합, 바지락 등 풍부한 해산물과 고소한 크림소스로 맛을 낸 크림 리조또",19900,"해산물, 유제품","새우, 홍합, 바지락, 크림 소스"
+16,KR,리조또,버섯 트러플 크림 리조또,mushroom_truffle_cream_risotto.jpg,새송이 버섯과 트러플 향을 가득 담은 크림소스와 함께한 리조또,21900,유제품,"새송이 버섯, 트러플, 크림 소스"
+17,KR,파스타,까르보나라 파스타,carbonara_pasta.jpg,"파르미지아노 레지아노 치즈와 버섯, 베이컨으로 맛을 낸 크림 파스타",17900,유제품,"파르미지아노 레지아노 치즈, 베이컨, 버섯"
+18,KR,파스타,새우크림 파스타,shrimp_cream_pasta.jpg,풍부한 새우의 향기가 가득한 고소하고 담백한 새우 크림 파스타,19900,"해산물, 유제품","새우, 크림 소스"
+19,KR,파스타,해산물 칠리 크림 파스타,seafood_chili_cream_pasta.jpg,"새우, 홍합, 바지락 등 해산물이 어우러진 매콤한 칠리 크림 파스타",19900,"해산물, 유제품","새우, 홍합, 바지락, 칠리, 크림 소스"
+20,KR,파스타,빼네 파스타,pane_pasta.jpg,새송이 버섯과 노티러 버섯의 향과 풍미가 진한 크림 스파게티를 빵 안에 담은 파스타,22900,유제품,"새송이 버섯, 노티러 버섯, 크림 소스"
+21,KR,파스타,만조 크림 파스타,sirloin_steak_cream_pasta.jpg,그릴에 구운 등심을 곁들인 고소한 치즈 크림 파스타,26000,"소고기, 유제품","한우 등심, 크림 소스, 치즈"
+22,KR,파스타,봉골레 에 루꼴라 파스타,vongole_rucola_pasta.jpg,"마늘, 고추, 바지락, 모시조개에 와인을 넣어 루꼴라와 함께 먹는 향기 가득한 올리브 오일 파스타",16900,해산물,"바지락, 모시조개, 루꼴라"
+23,KR,파스타,알리오 올리오 에 감베레띠 파스타,aglio_olio_gamberetti.jpg,"마늘, 고추, 가지, 토마토, 호박 등 올리브 오일에 볶고 새우를 곁들인 담백한 파스타",19900,"해산물, 유제품","새우, 마늘, 가지, 토마토, 호박"
+24,KR,샐러드,까쁘레제,caprese_salad.jpg,"후레쉬 모짜렐라와 바질, 생토마토를 올리브오일, 루꼴라에 곁들인 이탈리식 전채요리",14900,유제품,"모짜렐라 치즈, 바질, 생토마토, 루꼴라"
+25,KR,샐러드,스파뉴 챱 샐러드,cept_salad.jpg,"까망베르 치즈, 감자, 토마토, 베이컨, 야채 믹스가 푸짐하게 들어간 스파뉴 인기 샐러드",14900,"유제품, 소고기","까망베르 치즈, 감자, 토마토, 베이컨"
+26,KR,샐러드,스테이크 샐러드,sirloin_steak_salad.jpg,그릴에 구운 부드러운 소고기와 신선한 야채를 곁들인 발사믹 소스 샐러드,21900,소고기,"한우 등심, 신선한 야채, 발사믹 소스"
+1,JA,ピザ,マルゲリータ,margherita_pizza.jpg,トマトソースとバジルで味付けした代表的なイタリアンピザ,19900,貝類、乳製品,ホタテ、バター
+2,JA,ピザ,フレッシュルッコラピザ,fresh_rucola_pizza.jpg,薄い生地にトマトソース、ベーコン、チーズで味付けした香ばしいピザ,21900,貝類、乳製品,アワビ、バター
+3,JA,ピザ,ペパロニピザ,pepperoni_pizza.jpg,イタリア産の唐辛子とペパロニで味付けしたスパイシーなピザ,21900,牛肉,韓牛サーロイン
+4,JA,ピザ,イタリアンフォルマッジョ,italian_formaggio_pizza.jpg,カマンベール、エメンタール、パルミジャーノ、モッツァレラなど様々なチーズが溶け込んだ香り高いピザ,20900,乳製品,モッツァレラチーズ、パルミジャーノチーズ、エメンタールチーズ、カマンベールチーズ
+5,JA,ピザ,ゴルゴンゾーラとトマトのピザ,gorgonzola_pomodoro_pizza.jpg,ゴルゴンゾーラとプチトマトの塩味が絶妙な甘辛いピザ,21900,乳製品,ゴルゴンゾーラチーズ、プチトマト、はちみつ
+6,JA,ピザ,サラダピザ,salad_pizza.jpg,野菜とチーズを焼き上げた後、ソースと野菜、トマト、コーンをトッピングしたスペシャルピザ,21900,乳製品,チーズ、ミックス野菜、トマト、コーン
+7,JA,ピザ,スイートポテトピザ,sweet_potato_pizza.jpg,甘いスイートポテトピューレとチーズにベーコンをのせて焼いたピザ,21900,乳製品,スイートポテトピューレ、ベーコン、チェダーチーズ
+8,JA,ステーキ,サーロインステーキ,sirloin_steak.jpg,グリルで焼き上げた香ばしいサーロインステーキと焼きウェッジポテト、ローストマッシュルーム、新鮮なルッコラ,39900,牛肉,韓牛サーロイン、ウェッジポテト、ローストマッシュルーム、ルッコラ
+9,JA,パスタ,スパニュポモドーロパスタ,spagnew_pomodoro.jpg,さわやかなトマトソースと香ばしいモッツァレラチーズ、バジルの風味豊かなパスタ,15000,乳製品,モッツァレラチーズ、トマトソース、バジル
+10,JA,パスタ,ボロネーゼミートソースパスタ,bolognese_meat_sauce_pasta.jpg,牛ひき肉がたっぷり入ったトマトミートソースパスタ,17000,牛肉,牛ひき肉、トマトソース、パルミジャーノチーズ、バジル
+11,JA,パスタ,アマトリチャーナパスタ,amatriciana_pasta.jpg,香ばしいベーコンとスパイシーなチリトマトソースが絡み合うパスタ,18900,乳製品,ベーコン、チリ、トマトソース、パルミジャーノチーズ
+12,JA,パスタ,エビチリパスタ,shrimp_chili_pasta.jpg,プリプリのエビとスパイシーなチリトマトソースが絶妙に絡み合うエビチリパスタ,19900,海鮮、乳製品,エビ、チリ、トマトソース
+13,JA,パスタ,スパゲッティマリナーラパスタ,spaghetti_marinara.jpg,エビ、ムール貝、アサリ、ハマグリなど海鮮たっぷりのトマトソーススパゲッティ,19900,海鮮、乳製品,エビ、ムール貝、アサリ、ハマグリ、トマトソース
+14,JA,リゾット,マレトマトリゾット,mare_pomodoro_risotto.jpg,各種海鮮とトマトソースで仕上げたイタリア風の炒めご飯,18900,海鮮、乳製品,エビ、ムール貝、アサリ、トマトソース
+15,JA,リゾット,マレクリームリゾット,crema_di_mare_risotto.jpg,エビ、ムール貝、アサリなど海鮮たっぷりのクリーミーなリゾット,19900,海鮮、乳製品,エビ、ムール貝、アサリ、クリームソース
+16,JA,リゾット,キノコトリュフクリームリゾット,mushroom_truffle_cream_risotto.jpg,エリンギとトリュフの香りをたっぷり詰め込んだクリームソースリゾット,21900,乳製品,エリンギ、トリュフ、クリームソース
+17,JA,パスタ,カルボナーラパスタ,carbonara_pasta.jpg,パルミジャーノレッジャーノチーズとマッシュルーム、ベーコンで味付けしたクリームパスタ,17900,乳製品,パルミジャーノレッジャーノチーズ、ベーコン、マッシュルーム
+18,JA,パスタ,エビクリームパスタ,shrimp_cream_pasta.jpg,エビの香りがたっぷり詰まったクリーミーでマイルドなエビクリームパスタ,19900,海鮮、乳製品,エビ、クリームソース
+19,JA,パスタ,シーフードチリクリームパスタ,seafood_chili_cream_pasta.jpg,エビ、ムール貝、アサリなどの海鮮とスパイシーなチリクリームソースが絡み合うパスタ,19900,海鮮、乳製品,エビ、ムール貝、アサリ、チリ、クリームソース
+20,JA,パスタ,ペンネパスタ,pane_pasta.jpg,エリンギとノティレキノコの風味が豊かなクリームスパゲッティをパンの中に詰め込んだパスタ,22900,乳製品,エリンギ、ノティレキノコ、クリームソース
+21,JA,パスタ,サーロインクリームパスタ,sirloin_steak_cream_pasta.jpg,グリルで焼いたサーロインを添えたコクのあるチーズクリームパスタ,26000,牛肉、乳製品,韓牛サーロイン、クリームソース、チーズ
+22,JA,パスタ,ボンゴレビアンコとルッコラパスタ,vongole_rucola_pasta.jpg,ニンニク、唐辛子、アサリ、ハマグリにワインを加え、ルッコラと一緒に味わう香り豊かなオリーブオイルパスタ,16900,海鮮,アサリ、ハマグリ、ルッコラ
+23,JA,パスタ,ガーリックシュリンプオリオパスタ,aglio_olio_gamberetti.jpg,ニンニク、唐辛子、ナス、トマト、ズッキーニなどをオリーブオイルで炒め、エビを添えた淡白なパスタ,19900,海鮮、乳製品,エビ、ニンニク、ナス、トマト、ズッキーニ
+24,JA,サラダ,カプレーゼ,caprese_salad.jpg,フレッシュモッツァレラとバジル、トマトをオリーブオイル、ルッコラと一緒に味わうイタリアン前菜料理,14900,乳製品,モッツァレラチーズ、バジル、トマト、ルッコラ
+25,JA,サラダ,スパニュチョップサラダ,cept_salad.jpg,カマンベールチーズ、ポテト、トマト、ベーコン、ミックス野菜がたっぷり入ったスパニュ人気サラダ,14900,乳製品、牛肉,カマンベールチーズ、ポテト、トマト、ベーコン
+26,JA,サラダ,サーロインステーキサラダ,sirloin_steak_salad.jpg,グリルで焼いた柔らかいサーロインと新鮮な野菜を添えたバルサミコソースサラダ,21900,牛肉,韓牛サーロイン、新鮮な野菜、バルサミコソース
+1,EN,Pizza,Margherita,margherita_pizza.jpg,A classic Italian pizza with tomato sauce and basil,19900,"Shellfish, Dairy","Scallop, Butter"
+2,EN,Pizza,Fresh Rucola Pizza,fresh_rucola_pizza.jpg,"A crispy pizza with thin dough, tomato sauce, bacon, and cheese",21900,"Shellfish, Dairy","Abalone, Butter"
+3,EN,Pizza,Pepperoni Pizza,pepperoni_pizza.jpg,A spicy pizza with Italian chili and pepperoni,21900,Beef,Hanwoo Sirloin
+4,EN,Pizza,Italian Formaggio,italian_formaggio_pizza.jpg,"A fragrant pizza with various cheeses like Camembert, Emmental, Parmigiano, and Mozzarella",20900,Dairy,"Mozzarella Cheese, Parmigiano Cheese, Emmental Cheese, Camembert Cheese"
+5,EN,Pizza,Gorgonzola and Tomato Pizza,gorgonzola_pomodoro_pizza.jpg,A sweet and savory pizza with gorgonzola and cherry tomatoes,21900,Dairy,"Gorgonzola Cheese, Cherry Tomatoes, Honey"
+6,EN,Pizza,Salad Pizza,salad_pizza.jpg,"A special pizza topped with vegetables, cheese, and another layer of sauce, vegetables, tomatoes, and corn",21900,Dairy,"Cheese, Mixed Vegetables, Tomato, Corn"
+7,EN,Pizza,Sweet Potato Pizza,sweet_potato_pizza.jpg,"A sweet pizza topped with sweet potato puree, cheese, and bacon",21900,Dairy,"Sweet Potato Puree, Bacon, Cheddar Cheese"
+8,EN,Steak,Sirloin Steak,sirloin_steak.jpg,"A grilled sirloin steak with charred flavor, served with wedge potatoes, roasted mushrooms, and fresh arugula",39900,Beef,"Hanwoo Sirloin, Wedge Potatoes, Roasted Mushrooms, Arugula"
+9,EN,Pasta,Spagnew Pomodoro Pasta,spagnew_pomodoro.jpg,"A refreshing pasta with tomato sauce, savory mozzarella cheese, and fragrant basil",15000,Dairy,"Mozzarella Cheese, Tomato Sauce, Basil"
+10,EN,Pasta,Bolognese Meat Sauce Pasta,bolognese_meat_sauce_pasta.jpg,A pasta with hearty tomato meat sauce loaded with ground beef,17000,Beef,"Ground Beef, Tomato Sauce, Parmigiano Cheese, Basil"
+11,EN,Pasta,Amatriciana Pasta,amatriciana_pasta.jpg,A pasta with savory bacon and spicy chili tomato sauce,18900,Dairy,"Bacon, Chili, Tomato Sauce, Parmigiano Cheese"
+12,EN,Pasta,Shrimp Chili Pasta,shrimp_chili_pasta.jpg,A shrimp chili pasta with flavorful shrimp and spicy chili tomato sauce,19900,"Seafood, Dairy","Shrimp, Chili, Tomato Sauce"
+13,EN,Pasta,Spaghetti Marinara Pasta,spaghetti_marinara.jpg,"A spaghetti marinara with rich seafood like shrimp, mussels, clams, and surf clams in tomato sauce",19900,"Seafood, Dairy","Shrimp, Mussels, Clams, Surf Clams, Tomato Sauce"
+14,EN,Risotto,Mare Pomodoro Risotto,mare_pomodoro_risotto.jpg,An Italian-style fried rice with various seafood and tomato sauce,18900,"Seafood, Dairy","Shrimp, Mussels, Clams, Tomato Sauce"
+15,EN,Risotto,Crema di Mare Risotto,crema_di_mare_risotto.jpg,"A creamy risotto with abundant seafood like shrimp, mussels, and clams",19900,"Seafood, Dairy","Shrimp, Mussels, Clams, Cream Sauce"
+16,EN,Risotto,Mushroom Truffle Cream Risotto,mushroom_truffle_cream_risotto.jpg,A risotto with a rich cream sauce infused with the flavors of king oyster mushrooms and truffle,21900,Dairy,"King Oyster Mushroom, Truffle, Cream Sauce"
+17,EN,Pasta,Carbonara Pasta,carbonara_pasta.jpg,"A creamy pasta made with Parmigiano Reggiano cheese, mushrooms, and bacon",17900,Dairy,"Parmigiano Reggiano Cheese, Bacon, Mushrooms"
+18,EN,Pasta,Shrimp Cream Pasta,shrimp_cream_pasta.jpg,A mild and rich shrimp cream pasta filled with the aroma of shrimp,19900,"Seafood, Dairy","Shrimp, Cream Sauce"
+19,EN,Pasta,Seafood Chili Cream Pasta,seafood_chili_cream_pasta.jpg,"A pasta with spicy chili cream sauce, combined with seafood like shrimp, mussels, and clams",19900,"Seafood, Dairy","Shrimp, Mussels, Clams, Chili, Cream Sauce"
+20,EN,Pasta,Pane Pasta,pane_pasta.jpg,"A creamy spaghetti filled with the flavors of king oyster mushrooms and ntire mushrooms, served inside bread",22900,Dairy,"King Oyster Mushroom, Ntire Mushrooms, Cream Sauce"
+21,EN,Pasta,Sirloin Cream Pasta,sirloin_steak_cream_pasta.jpg,A creamy cheese pasta served with grilled sirloin,26000,"Beef, Dairy","Hanwoo Sirloin, Cream Sauce, Cheese"
+22,EN,Pasta,Vongole e Rucola Pasta,vongole_rucola_pasta.jpg,"A fragrant olive oil pasta with garlic, chili, clams, surf clams, and wine, served with arugula",16900,Seafood,"Clams, Surf Clams, Arugula"
+23,EN,Pasta,Aglio Olio e Gamberetti Pasta,aglio_olio_gamberetti.jpg,"A light pasta sautéed in olive oil with garlic, chili, eggplant, tomatoes, zucchini, and shrimp",19900,"Seafood, Dairy","Shrimp, Garlic, Eggplant, Tomato, Zucchini"
+24,EN,Salad,Caprese,caprese_salad.jpg,"An Italian appetizer with fresh mozzarella, basil, tomatoes, olive oil, and arugula",14900,Dairy,"Mozzarella Cheese, Basil, Tomatoes, Arugula"
+25,EN,Salad,Spagnew Chopped Salad,cept_salad.jpg,"A popular Spagnew salad with Camembert cheese, potatoes, tomatoes, bacon, and mixed vegetables",14900,"Dairy, Beef","Camembert Cheese, Potatoes, Tomatoes, Bacon"
+26,EN,Salad,Sirloin Steak Salad,sirloin_steak_salad.jpg,A balsamic salad with tender grilled sirloin and fresh vegetables,21900,Beef,"Hanwoo Sirloin, Fresh Vegetables, Balsamic Sauce"
+1,YUE,披薩,瑪格麗塔,margherita_pizza.jpg,用番茄醬同羅勒做嘅經典意大利披薩,19900,"貝類, 乳製品","帶子, 牛油"
+2,YUE,披薩,鮮火箭菜披薩,fresh_rucola_pizza.jpg,薄薄嘅餅底，加上番茄醬、煙肉同芝士焗製而成嘅香脆披薩,21900,"貝類, 乳製品","鮑魚, 牛油"
+3,YUE,披薩,意大利辣肉腸披薩,pepperoni_pizza.jpg,用意大利辣椒同辣肉腸做嘅辣味披薩,21900,牛肉,韓牛西冷
+4,YUE,披薩,意大利芝士披薩,italian_formaggio_pizza.jpg,用咸美頓芝士、艾曼塔芝士、帕爾瑪芝士、同埋水牛芝士做嘅芳香披薩,20900,乳製品,"水牛芝士, 帕爾瑪芝士, 艾曼塔芝士, 咸美頓芝士"
+5,YUE,披薩,藍芝士番茄披薩,gorgonzola_pomodoro_pizza.jpg,用藍芝士同車厘茄做嘅鹹甜披薩,21900,乳製品,"藍芝士, 車厘茄, 蜂蜜"
+6,YUE,披薩,沙律披薩,salad_pizza.jpg,焗製好嘅芝士同菜，然後再加上醬汁、菜、番茄同粟米做成嘅特別披薩,21900,乳製品,"芝士, 雜菜, 番茄, 粟米"
+7,YUE,披薩,甜薯披薩,sweet_potato_pizza.jpg,甜薯蓉同芝士加上煙肉焗製而成嘅甜味披薩,21900,乳製品,"甜薯蓉, 煙肉, 車打芝士"
+8,YUE,牛扒,西冷牛扒,sirloin_steak.jpg,烤爐烤製嘅香味西冷牛扒，配焗薯角、烤蘑菇同新鮮火箭菜,39900,牛肉,"韓牛西冷, 薯角, 烤蘑菇, 火箭菜"
+9,YUE,意粉,番茄蓉意粉,spagnew_pomodoro.jpg,用番茄醬、水牛芝士同羅勒製作嘅清新意粉,15000,乳製品,"水牛芝士, 番茄醬, 羅勒"
+10,YUE,意粉,肉醬意粉,bolognese_meat_sauce_pasta.jpg,加入大量牛絞肉同番茄肉醬嘅意粉,17000,牛肉,"牛絞肉, 番茄醬, 帕爾瑪芝士, 羅勒"
+11,YUE,意粉,辣茄意粉,amatriciana_pasta.jpg,用煙肉同辣椒製作嘅辣茄意粉,18900,乳製品,"煙肉, 辣椒, 番茄醬, 帕爾瑪芝士"
+12,YUE,意粉,辣蝦意粉,shrimp_chili_pasta.jpg,用鮮蝦同辣茄醬製作嘅辣蝦意粉,19900,"海鮮, 乳製品","蝦, 辣椒, 番茄醬"
+13,YUE,意粉,海鮮茄汁意粉,spaghetti_marinara.jpg,以鮮蝦、青口、蜆同車螺為主材料嘅茄汁意粉,19900,"海鮮, 乳製品","蝦, 青口, 蜆, 車螺, 番茄醬"
+14,YUE,燴飯,番茄海鮮燴飯,mare_pomodoro_risotto.jpg,以各式海鮮、番茄醬同飯製作嘅意式炒飯,18900,"海鮮, 乳製品","蝦, 青口, 蜆, 番茄醬"
+15,YUE,燴飯,海鮮忌廉燴飯,crema_di_mare_risotto.jpg,以鮮蝦、青口、蜆等海鮮製作嘅濃郁忌廉燴飯,19900,"海鮮, 乳製品","蝦, 青口, 蜆, 忌廉醬"
+16,YUE,燴飯,蘑菇松露忌廉燴飯,mushroom_truffle_cream_risotto.jpg,用鮮味十足嘅鮑魚菇同松露製作嘅忌廉燴飯,21900,乳製品,"鮑魚菇, 松露, 忌廉醬"
+17,YUE,意粉,卡邦尼意粉,carbonara_pasta.jpg,用帕爾瑪芝士、蘑菇同煙肉製作嘅忌廉意粉,17900,乳製品,"帕爾瑪芝士, 煙肉, 蘑菇"
+18,YUE,意粉,忌廉蝦意粉,shrimp_cream_pasta.jpg,充滿濃郁蝦味同忌廉嘅忌廉蝦意粉,19900,"海鮮, 乳製品","蝦, 忌廉醬"
+19,YUE,意粉,海鮮辣椒忌廉意粉,seafood_chili_cream_pasta.jpg,用鮮蝦、青口、蜆等海鮮製作嘅辣味忌廉意粉,19900,"海鮮, 乳製品","蝦, 青口, 蜆, 辣椒, 忌廉醬"
+20,YUE,意粉,焗麵包忌廉意粉,pane_pasta.jpg,用鮑魚菇同諾丁漢蘑菇製作嘅香濃忌廉意粉，焗入麵包中,22900,乳製品,"鮑魚菇, 諾丁漢蘑菇, 忌廉醬"
+21,YUE,意粉,西冷忌廉意粉,sirloin_steak_cream_pasta.jpg,配上烤製西冷牛扒嘅香濃芝士忌廉意粉,26000,"牛肉, 乳製品","韓牛西冷, 忌廉醬, 芝士"
+22,YUE,意粉,蚬肉火箭菜意粉,vongole_rucola_pasta.jpg,用蒜、辣椒、蜆同車螺，加入白酒同火箭菜做嘅香味十足橄欖油意粉,16900,海鮮,"蜆, 車螺, 火箭菜"
+23,YUE,意粉,蒜香蝦仁意粉,aglio_olio_gamberetti.jpg,用蒜、辣椒、茄子、番茄、節瓜同蝦仁炒製而成嘅清淡橄欖油意粉,19900,"海鮮, 乳製品","蝦仁, 蒜, 茄子, 番茄, 節瓜"
+24,YUE,沙律,水牛芝士沙律,caprese_salad.jpg,用新鮮水牛芝士、羅勒、番茄、橄欖油同火箭菜製作嘅意式開胃菜,14900,乳製品,"水牛芝士, 羅勒, 番茄, 火箭菜"
+25,YUE,沙律,沙律碟沙律,cept_salad.jpg,用咸美頓芝士、薯仔、番茄、煙肉同雜菜製作嘅沙律,14900,"乳製品, 牛肉","咸美頓芝士, 薯仔, 番茄, 煙肉"
+26,YUE,沙律,西冷牛扒沙律,sirloin_steak_salad.jpg,配上烤製柔嫩嘅西冷牛扒同新鮮菜嘅香醋沙律,21900,牛肉,"韓牛西冷, 新鮮菜, 香醋"
+1,CN,披萨,玛格丽塔,margherita_pizza.jpg,用番茄酱和罗勒调制的经典意大利披萨,19900,"贝类, 乳制品","扇贝, 黄油"
+2,CN,披萨,鲜火箭菜披萨,fresh_rucola_pizza.jpg,薄饼底，加上番茄酱、培根和芝士烘焙而成的香脆披萨,21900,"贝类, 乳制品","鲍鱼, 黄油"
+3,CN,披萨,意大利辣香肠披萨,pepperoni_pizza.jpg,用意大利辣椒和辣香肠调制的辛辣披萨,21900,牛肉,韩牛西冷
+4,CN,披萨,意大利芝士披萨,italian_formaggio_pizza.jpg,用卡门贝尔芝士、艾曼塔芝士、帕尔马芝士和莫扎里拉芝士调制的芳香披萨,20900,乳制品,"莫扎里拉芝士, 帕尔马芝士, 艾曼塔芝士, 卡门贝尔芝士"
+5,CN,披萨,蓝芝士番茄披萨,gorgonzola_pomodoro_pizza.jpg,用蓝芝士和小番茄调制的咸甜披萨,21900,乳制品,"蓝芝士, 小番茄, 蜂蜜"
+6,CN,披萨,沙拉披萨,salad_pizza.jpg,烘焙后的芝士和蔬菜，再加上酱汁、蔬菜、番茄和玉米制成的特别披萨,21900,乳制品,"芝士, 混合蔬菜, 番茄, 玉米"
+7,CN,披萨,甜薯披萨,sweet_potato_pizza.jpg,甜薯泥和芝士，加上培根烘焙而成的甜味披萨,21900,乳制品,"甜薯泥, 培根, 切达芝士"
+8,CN,牛排,西冷牛排,sirloin_steak.jpg,烤炉烤制的香味西冷牛排，配烤薯角、烤蘑菇和新鲜火箭菜,39900,牛肉,"韩牛西冷, 薯角, 烤蘑菇, 火箭菜"
+9,CN,意面,番茄蓉意面,spagnew_pomodoro.jpg,用番茄酱、莫扎里拉芝士和罗勒制成的清新意面,15000,乳制品,"莫扎里拉芝士, 番茄酱, 罗勒"
+10,CN,意面,肉酱意面,bolognese_meat_sauce_pasta.jpg,加入大量牛肉末和番茄肉酱的意面,17000,牛肉,"牛肉末, 番茄酱, 帕尔马芝士, 罗勒"
+11,CN,意面,阿玛特里齐亚纳意面,amatriciana_pasta.jpg,用培根和辣椒调制的辣味番茄意面,18900,乳制品,"培根, 辣椒, 番茄酱, 帕尔马芝士"
+12,CN,意面,辣虾意面,shrimp_chili_pasta.jpg,用鲜虾和辣味番茄酱调制的辣味虾意面,19900,"海鲜, 乳制品","虾, 辣椒, 番茄酱"
+13,CN,意面,海鲜番茄意面,spaghetti_marinara.jpg,以鲜虾、青口贝、蛤蜊和蛏子为主要食材的番茄意面,19900,"海鲜, 乳制品","虾, 青口贝, 蛤蜊, 蛏子, 番茄酱"
+14,CN,烩饭,番茄海鲜烩饭,mare_pomodoro_risotto.jpg,各式海鲜与番茄酱炒制的意式炒饭,18900,"海鲜, 乳制品","虾, 青口贝, 蛤蜊, 番茄酱"
+15,CN,烩饭,海鲜奶油烩饭,crema_di_mare_risotto.jpg,用鲜虾、青口贝、蛤蜊等丰富海鲜调制的奶油烩饭,19900,"海鲜, 乳制品","虾, 青口贝, 蛤蜊, 奶油酱"
+16,CN,烩饭,蘑菇松露奶油烩饭,mushroom_truffle_cream_risotto.jpg,用杏鲍菇和松露调制的奶油烩饭,21900,乳制品,"杏鲍菇, 松露, 奶油酱"
+17,CN,意面,卡邦尼意面,carbonara_pasta.jpg,用帕尔马芝士、蘑菇和培根调制的奶油意面,17900,乳制品,"帕尔马芝士, 培根, 蘑菇"
+18,CN,意面,奶油虾意面,shrimp_cream_pasta.jpg,充满浓郁虾香和奶油的奶油虾意面,19900,"海鲜, 乳制品","虾, 奶油酱"
+19,CN,意面,海鲜辣椒奶油意面,seafood_chili_cream_pasta.jpg,用鲜虾、青口贝、蛤蜊等丰富海鲜调制的辣味奶油意面,19900,"海鲜, 乳制品","虾, 青口贝, 蛤蜊, 辣椒, 奶油酱"
+20,CN,意面,焗面包奶油意面,pane_pasta.jpg,用杏鲍菇和蘑菇调制的香浓奶油意面，焗入面包中,22900,乳制品,"杏鲍菇, 蘑菇, 奶油酱"
+21,CN,意面,西冷奶油意面,sirloin_steak_cream_pasta.jpg,配上烤制西冷牛排的香浓芝士奶油意面,26000,"牛肉, 乳制品","韩牛西冷, 奶油酱, 芝士"
+22,CN,意面,蚬肉火箭菜意面,vongole_rucola_pasta.jpg,用蒜、辣椒、蛤蜊、蛏子、白葡萄酒和火箭菜调制的香味浓郁橄榄油意面,16900,海鲜,"蛤蜊, 蛏子, 火箭菜"
+23,CN,意面,蒜香虾仁意面,aglio_olio_gamberetti.jpg,用蒜、辣椒、茄子、番茄、西葫芦炒制而成的清淡橄榄油意面,19900,"海鲜, 乳制品","虾仁, 蒜, 茄子, 番茄, 西葫芦"
+24,CN,沙拉,意式水牛芝士沙拉,caprese_salad.jpg,用新鲜水牛芝士、罗勒、番茄、橄榄油和火箭菜调制的意式开胃菜,14900,乳制品,"水牛芝士, 罗勒, 番茄, 火箭菜"
+25,CN,沙拉,沙拉碟沙拉,cept_salad.jpg,用卡门贝尔芝士、土豆、番茄、培根和混合蔬菜调制的沙拉,14900,"乳制品, 牛肉","卡门贝尔芝士, 土豆, 番茄, 培根"
+26,CN,沙拉,西冷牛排沙拉,sirloin_steak_salad.jpg,配上烤制柔嫩西冷牛排和新鲜蔬菜的意大利香醋沙拉,21900,牛肉,"韩牛西冷, 新鲜蔬菜, 意大利香醋"
+러스틱하트
