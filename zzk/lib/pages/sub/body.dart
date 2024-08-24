@@ -55,10 +55,13 @@ class _OrderPageBodyState extends State<OrderPageBody> {
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text('Language: ', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                  Text('Language: ',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                   DropdownButton<String>(
                     value: widget.language,
-                    items: <String>['English', 'Korean', 'Chinese', 'Japanese'].map((String value) {
+                    items: <String>['English', 'Korean', 'Chinese', 'Japanese']
+                        .map((String value) {
                       return DropdownMenuItem<String>(
                         value: value,
                         child: Text(value),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zzk/pages/DietaryRestrictionsSelector.dart'; // Make sure to import the correct path
+import 'package:zzk/components/DietaryRestrictionsSelector.dart'; // Make sure to import the correct path
 
 class PreferenceSelectionPage extends StatefulWidget {
   final List<String> dietaryRestrictionList;
