@@ -48,6 +48,7 @@ Future<List<FoodSection>> read() async {
       print('Item: ${item.name}, Price: ${item.price}, Description: ${item.description}, Image: ${item.imageFileName}');
     }
   }
-
+// return sections after 0.5 seconds
+  await Future.delayed(const Duration(milliseconds: 500));
   return sections;
 }
