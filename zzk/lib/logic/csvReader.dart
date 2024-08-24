@@ -34,7 +34,7 @@ Future<List<FoodSection>> loadFoodSections(String assetPath) async {
     // Convert the map into a list of FoodSection
     return sections.entries.map((entry) => FoodSection(entry.key, entry.value)).toList();
   } catch (e) {
-    print('An error occurred while loading or parsing the CSV: $e');
+    // print('An error occurred while loading or parsing the CSV: $e');
     return [];
   }
 }
@@ -43,9 +43,9 @@ Future<List<FoodSection>> read() async {
   String filePath = 'assets/food_menu2.csv'; // Ensure the path matches the location of your CSV file
   List<FoodSection> sections = await loadFoodSections(filePath);
   for (var section in sections) {
-    print('Section: ${section.name}');
+    // print('Section: ${section.name}');
     for (var item in section.items) {
-      print('Item: ${item.name}, Price: ${item.price}, Description: ${item.description}, Image: ${item.imageFileName}');
+      // print('Item: ${item.name}, Price: ${item.price}, Description: ${item.description}, Image: ${item.imageFileName}');
     }
   }
 // return sections after 0.5 seconds
