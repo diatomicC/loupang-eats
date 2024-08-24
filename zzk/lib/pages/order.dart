@@ -206,27 +206,34 @@ class OrderPageBody extends StatelessWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text('Language: ',
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold)),
-                    DropdownButton<String>(
-                      value: language,
-                      items: <String>[
-                        'English',
-                        'Korean',
-                        'Chinese',
-                        'Japanese'
-                      ].map((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(value),
-                        );
-                      }).toList(),
-                      onChanged: (String? value) {
-                        if (value != null) {
-                          onLanguageChanged(value);
-                        }
-                      },
+                    Text(
+                      'Language: ',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
+                    Container(
+                      alignment: Alignment.centerLeft,
+                      child: DropdownButton<String>(
+                        value: language,
+                        items: <String>[
+                          'English',
+                          'Korean',
+                          'Chinese',
+                          'Japanese'
+                        ].map((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList(),
+                        onChanged: (String? value) {
+                          if (value != null) {
+                            onLanguageChanged(value);
+                          }
+                        },
+                        alignment: Alignment.center,
+                        isExpanded: false,
+                      ),
                     ),
                   ],
                 ),
