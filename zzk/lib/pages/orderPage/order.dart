@@ -14,7 +14,8 @@ class _OrderPageState extends State<OrderPage> {
   ScrollController _scrollController = ScrollController();
   double _opacity = 1.0;
   String _language = 'Chinese';
-  bool isGridMode = true;
+  bool _isGridMode = false;
+  bool _isLoading = false;
 
   @override
   void initState() {
@@ -46,9 +47,15 @@ class _OrderPageState extends State<OrderPage> {
     });
   }
 
-  void _toggleViewMode() {
+  void _toggleViewMode() async {
     setState(() {
-      isGridMode = !isGridMode;
+      _isLoading = true;
+    });
+
+    await Future.delayed(Duration(seconds: 1));
+    setState(() {
+      _isGridMode = !_isGridMode;
+      _isLoading = false;
     });
   }
 
@@ -129,13 +136,19 @@ class _OrderPageState extends State<OrderPage> {
                   ),
                 ),
               ),
-              if (snapshot.connectionState == ConnectionState.waiting)
+              if (_isLoading) // 로딩 중일 때 표시
                 SliverFillRemaining(
                   child: Center(
                     child: CircularProgressIndicator(),
                   ),
-                ),
-              if (snapshot.hasError)
+                )
+              else if (snapshot.connectionState == ConnectionState.waiting)
+                SliverFillRemaining(
+                  child: Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                )
+              else if (snapshot.hasError)
                 SliverFillRemaining(
                   child: Center(
                     child: Text('An error occurred while loading the menu.'),
@@ -148,7 +161,7 @@ class _OrderPageState extends State<OrderPage> {
                     sections: snapshot.data.sections,
                     language: _language,
                     onLanguageChanged: _onLanguageChanged,
-                    isGridMode: isGridMode, // Pass the current state
+                    isGridMode: _isGridMode, // Pass the current state
                     onToggleViewMode:
                         _toggleViewMode, // Pass the toggle function
                   ),
