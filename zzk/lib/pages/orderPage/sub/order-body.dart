@@ -157,11 +157,26 @@ class ItemGridWidget extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      item.name,
-                      style: Theme.of(context).textTheme.titleLarge,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
+                    Row(
+                      children: [
+                        Text(
+                          item.name,
+                          style: Theme.of(context).textTheme.titleLarge,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+
+                        // warning icon is shown if the item contains any allergens.
+                        // use sakuraBreezeAllergy to get the allergen codes of the item
+                        // use allergyCodesChosen to get the allergen codes that a user chose to filter
+
+                        if (sakuraBreezeAlergy[item.id.toString()] != null &&
+                            allergyCodeMap.keys.any((key) => allergyCodesChosen.contains(key)))
+                          Icon(
+                            Icons.warning,
+                            color: Colors.red,
+                          ),
+                      ],
                     ),
                     Expanded(
                       child: Text(
@@ -359,12 +374,17 @@ class ItemListWidget extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  item.name,
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      item.name,
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ),
                 Text(
                   item.description,
