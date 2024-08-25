@@ -92,7 +92,8 @@ Future<String> _fetchChatGptResponseAsString(
     Uri.parse(apiUrl),
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ${apiKey}',
+      'Authorization':
+          'Bearer ${'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'}',
     },
     body: jsonEncode({
       'model': 'gpt-4o-mini',
@@ -129,5 +130,6 @@ Future<Object> fetchChatGptResponseAsJSON(
   // call the fetchChatGptResponseAsString function
   final response = await _fetchChatGptResponseAsString(apiUrl, apiKey, menu);
   // parse the response as JSON
+  print(response);
   return jsonDecode(response);
 }

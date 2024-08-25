@@ -1,6 +1,7 @@
 import 'package:csv/csv.dart';
 import 'package:flutter/services.dart';
 import 'package:zzk/classes/FoodSectionClass.dart';
+import 'package:zzk/importantVariables.dart';
 
 Future<Menu> loadFoodSectionsAndInfo(String restaurantId) async {
   try {
@@ -63,4 +64,17 @@ Future<Menu> read({required String restaurantId}) async {
 // return sections after 0.5 seconds
   await Future.delayed(const Duration(milliseconds: 500));
   return menu;
+}
+
+Future<List<Menu>> loadPresetRestaurant() async {
+  List<Menu> menus = [];
+  // load preset restaurant's id
+  List<String> id = totalId;
+  // run csv reader for each restaurant
+  for (var restaurantId in id) {
+    Future<Menu> menu = loadFoodSectionsAndInfo(restaurantId);
+    menus.add(await menu);
+  }
+  // return all
+  return menus;
 }
