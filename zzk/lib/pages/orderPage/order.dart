@@ -2,7 +2,6 @@ import 'dart:math';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:zzk/logic/csvReader.dart';
-import 'package:zzk/pages/test/testpage.dart';
 import '../../classes/FoodSectionClass.dart';
 import 'sub/order-body.dart';
 
@@ -15,13 +14,11 @@ class _OrderPageState extends State<OrderPage> {
   ScrollController _scrollController = ScrollController();
   double _opacity = 1.0;
   String _language = 'Chinese';
-  bool _isGridMode = false;
-  bool _isLoading = false;
+  bool isGridMode = true;
 
   @override
   void initState() {
     super.initState();
-
     _scrollController.addListener(_onScroll);
   }
 
@@ -49,15 +46,9 @@ class _OrderPageState extends State<OrderPage> {
     });
   }
 
-  void _toggleViewMode() async {
+  void _toggleViewMode() {
     setState(() {
-      _isLoading = true;
-    });
-
-    await Future.delayed(Duration(seconds: 1));
-    setState(() {
-      _isGridMode = !_isGridMode;
-      _isLoading = false;
+      isGridMode = !isGridMode;
     });
   }
 
@@ -138,19 +129,13 @@ class _OrderPageState extends State<OrderPage> {
                   ),
                 ),
               ),
-              if (_isLoading) // 로딩 중일 때 표시
+              if (snapshot.connectionState == ConnectionState.waiting)
                 SliverFillRemaining(
                   child: Center(
                     child: CircularProgressIndicator(),
                   ),
-                )
-              else if (snapshot.connectionState == ConnectionState.waiting)
-                SliverFillRemaining(
-                  child: Center(
-                    child: CircularProgressIndicator(),
-                  ),
-                )
-              else if (snapshot.hasError)
+                ),
+              if (snapshot.hasError)
                 SliverFillRemaining(
                   child: Center(
                     child: Text('An error occurred while loading the menu.'),
@@ -163,7 +148,7 @@ class _OrderPageState extends State<OrderPage> {
                     sections: snapshot.data.sections,
                     language: _language,
                     onLanguageChanged: _onLanguageChanged,
-                    isGridMode: _isGridMode, // Pass the current state
+                    isGridMode: isGridMode, // Pass the current state
                     onToggleViewMode:
                         _toggleViewMode, // Pass the toggle function
                   ),
