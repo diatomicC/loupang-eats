@@ -78,7 +78,7 @@ Loupang Eats follows a **Modular Architecture**:
 
 Experience our app with the following demo:
 
-1. [Live Demo](link-to-demo)
+1. [Live Demo](https://youtu.be/qjtAtooVffc)
 
 
 ### Development Workflow
