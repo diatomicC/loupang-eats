@@ -1,4 +1,7 @@
 # Loupang Eats - Multilingual & Allergy-Sensitive Food Delivery App
+### Live Demo
+https://youtu.be/qjtAtooVffc
+
 [loupang_eats.pdf](https://github.com/user-attachments/files/16738657/loupang_eats.pdf)
 ![1](https://github.com/user-attachments/assets/6894120a-4e4b-414b-801f-5fef93e4ea4e)
 
