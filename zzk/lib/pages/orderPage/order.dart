@@ -41,9 +41,16 @@ class _OrderPageState extends State<OrderPage> {
 
   Future<Menu> menuData = read(restaurantId: 'sakura_breeze');
 
-  void _onLanguageChanged(String newLanguage) {
+  void _onLanguageChanged(String newLanguage) async {
+    setState(() {
+      _isLoading = true;
+    });
+
+    await Future.delayed(Duration(seconds: 1));
+
     setState(() {
       _language = newLanguage;
+      _isLoading = false;
     });
   }
 
@@ -69,7 +76,6 @@ class _OrderPageState extends State<OrderPage> {
             controller: _scrollController,
             slivers: <Widget>[
               SliverAppBar(
-                // no back button
                 automaticallyImplyLeading: true,
                 expandedHeight: 240.0,
                 titleSpacing: 0,
@@ -154,7 +160,7 @@ class _OrderPageState extends State<OrderPage> {
                     child: Text('An error occurred while loading the menu.'),
                   ),
                 ),
-              if (snapshot.hasData)
+              if (snapshot.hasData && !_isLoading)
                 SliverToBoxAdapter(
                   child: OrderPageBody(
                     restaurantId: snapshot.data.restaurantId,
