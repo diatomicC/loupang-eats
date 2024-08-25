@@ -2,6 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:zzk/classes/FoodSectionClass.dart';
 
+// Define multiple language maps for different UI elements
+final Map<String, Map<String, String>> i18n_langCode = {
+  'price': {
+    'EN': 'Price',
+    'KO': '가격',
+    'CN': '价格',
+    'JA': '価格',
+  },
+  'description': {
+    'EN': 'Description',
+    'KO': '설명',
+    'CN': '描述',
+    'JA': '説明',
+  },
+  // Add more maps for other UI elements as needed
+};
+
 class ItemPage extends StatefulWidget {
   final FoodItem foodItem;
   final String languageCode;
@@ -33,6 +50,13 @@ class _ItemPageState extends State<ItemPage> {
     }
   }
 
+  // Generic callback function for internationalization
+  String getI18nLabel(String key) {
+    return i18n_langCode[key]?[widget.languageCode] ??
+        i18n_langCode[key]?['EN'] ??
+        key;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,7 +83,8 @@ class _ItemPageState extends State<ItemPage> {
             height: 300,
             width: double.infinity,
             child: Hero(
-              tag: 'restaurantId: ${widget.restaurantId}, foodItemId: ${widget.foodItem.id}',
+              tag:
+                  'restaurantId: ${widget.restaurantId}, foodItemId: ${widget.foodItem.id}',
               child: widget.receivedImage ?? Text('No Image'),
               transitionOnUserGestures: true,
               // make the animation curve linear
@@ -110,7 +135,8 @@ class _ItemPageState extends State<ItemPage> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          '가격',
+                          /* text location for the price keyword for language */
+                          getI18nLabel('price'),
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,

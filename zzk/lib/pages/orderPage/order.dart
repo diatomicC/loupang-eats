@@ -15,7 +15,6 @@ class _OrderPageState extends State<OrderPage> {
   double _opacity = 1.0;
   String _language = 'Chinese';
   bool isGridMode = true;
-  bool isGridMode = true;
 
   @override
   void initState() {
@@ -44,12 +43,6 @@ class _OrderPageState extends State<OrderPage> {
   void _onLanguageChanged(String newLanguage) {
     setState(() {
       _language = newLanguage;
-    });
-  }
-
-  void _toggleViewMode() {
-    setState(() {
-      isGridMode = !isGridMode;
     });
   }
 
