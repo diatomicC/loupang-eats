@@ -1,44 +1,84 @@
 import 'package:flutter/material.dart';
 import 'package:zzk/clicky/clicky_flutter.dart';
-import 'package:zzk/importantVariables.dart';
 import '../../../classes/FoodSectionClass.dart';
 import '../../../clicky/styles.dart';
 import '../itemPage/item.dart';
 
-class SectionWidget extends StatelessWidget {
+class SectionWidget extends StatefulWidget {
   final FoodSection section;
   final String languageCode;
   final String restaurantId;
-
   final bool isGridMode;
 
-  SectionWidget({required this.section, required this.languageCode, required this.restaurantId, required this.isGridMode});
+  SectionWidget({
+    required this.section,
+    required this.languageCode,
+    required this.restaurantId,
+    required this.isGridMode,
+  });
+
+  @override
+  _SectionWidgetState createState() => _SectionWidgetState();
+}
+
+class _SectionWidgetState extends State<SectionWidget> {
+  String selectedCurrency = 'KRW';
+
+  final Map<String, double> exchangeRates = {
+    'KRW': 1.0,
+    'USD': 0.00075,
+    'EUR': 0.00069,
+    'JPY': 0.11,
+    'CNY': 0.0052,
+  };
 
   @override
   Widget build(BuildContext context) {
-    List<FoodItem> filteredItems = section.items.where((item) => item.language == languageCode).toList();
+    List<FoodItem> filteredItems = widget.section.items
+        .where((item) => item.language == widget.languageCode)
+        .toList();
 
-    //  if the filteredItems list is empty, return an empty container
     if (filteredItems.isEmpty) {
-      return Container(); // Don't show empty sections
+      return Container();
     }
 
-    // sort the items by their id
     filteredItems.sort((a, b) => a.id.compareTo(b.id));
 
     return Column(
       children: [
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Text(
-            section.name,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                widget.section.name,
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              DropdownButton<String>(
+                value: selectedCurrency,
+                onChanged: (String? newValue) {
+                  if (newValue != null) {
+                    setState(() {
+                      selectedCurrency = newValue;
+                    });
+                  }
+                },
+                items: exchangeRates.keys
+                    .map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+              ),
+            ],
           ),
         ),
-        isGridMode
+        widget.isGridMode
             ? GridView.builder(
                 padding: EdgeInsets.all(8),
                 shrinkWrap: true,
@@ -57,13 +97,16 @@ class SectionWidget extends StatelessWidget {
                       shrinkScale: ShrinkScale.byRatio(0.04),
                     ),
                     child: ItemGridWidget(
-                        restaurantId: restaurantId,
-                        item: filteredItems[index],
-                        languageCode: languageCode,
-                        receivedImage: Image.asset(
-                          'assets/images/${restaurantId}/${filteredItems[index].imageFileName}',
-                          fit: BoxFit.cover,
-                        )),
+                      restaurantId: widget.restaurantId,
+                      item: filteredItems[index],
+                      languageCode: widget.languageCode,
+                      exchangeRate: exchangeRates[selectedCurrency]!,
+                      currencyCode: selectedCurrency,
+                      receivedImage: Image.asset(
+                        'assets/images/${widget.restaurantId}/${filteredItems[index].imageFileName}',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                   );
                 },
               )
@@ -74,10 +117,12 @@ class SectionWidget extends StatelessWidget {
                 itemBuilder: (BuildContext context, int index) {
                   return ItemListWidget(
                     item: filteredItems[index],
-                    languageCode: languageCode,
-                    restaurantId: restaurantId,
+                    languageCode: widget.languageCode,
+                    restaurantId: widget.restaurantId,
+                    exchangeRate: exchangeRates[selectedCurrency]!,
+                    currencyCode: selectedCurrency,
                     receievedImage: Image.asset(
-                      'assets/images/${restaurantId}/${filteredItems[index].imageFileName}',
+                      'assets/images/${widget.restaurantId}/${filteredItems[index].imageFileName}',
                       fit: BoxFit.cover,
                     ),
                   );
@@ -93,40 +138,36 @@ class ItemGridWidget extends StatelessWidget {
   final String restaurantId;
   final String languageCode;
   final Image? receivedImage;
+  final double exchangeRate;
+  final String currencyCode;
 
-  final allergyCodeMap = {
-    '1': 'Eggs',
-    '2': 'Fish',
-    '3': 'Milk',
-    '4': 'Peanuts',
-    '5': 'Shellfish',
-    '6': 'Soy',
-    '7': 'Tree Nuts',
-    '8': 'Wheat',
-    '9': 'Gluten',
-    '10': 'Pork',
-    '11': 'Beef',
-    '12': 'Chicken',
-    '13': 'Duck',
-    '14': 'Seafood',
-    '15': 'Vegetarian',
-  };
-
-  ItemGridWidget({required this.item, required this.languageCode, required this.restaurantId, this.receivedImage});
+  ItemGridWidget({
+    required this.item,
+    required this.languageCode,
+    required this.restaurantId,
+    required this.exchangeRate,
+    required this.currencyCode,
+    this.receivedImage,
+  });
 
   @override
   Widget build(BuildContext context) {
+    double convertedPrice = item.price * exchangeRate;
     return InkWell(
       onTap: () {
         Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => ItemPage(
-                      foodItem: item,
-                      languageCode: languageCode,
-                      restaurantId: restaurantId,
-                      receivedImage: receivedImage,
-                    )));
+          context,
+          MaterialPageRoute(
+            builder: (context) => ItemPage(
+              foodItem: item,
+              languageCode: languageCode,
+              restaurantId: restaurantId,
+              receivedImage: receivedImage,
+              exchangeRate: exchangeRate,
+              currencyCode: currencyCode,
+            ),
+          ),
+        );
       },
       child: Card(
         shape: RoundedRectangleBorder(
@@ -139,10 +180,9 @@ class ItemGridWidget extends StatelessWidget {
               height: 170,
               width: double.infinity,
               child: Hero(
-                tag: 'restaurantId: ${restaurantId}, foodItemId: ${item.id}',
+                tag: 'restaurantId: $restaurantId, foodItemId: ${item.id}',
                 child: receivedImage ?? Text('No Image'),
                 transitionOnUserGestures: true,
-                // make the animation curve linear
                 createRectTween: (begin, end) {
                   return RectTween(
                     begin: begin,
@@ -178,6 +218,7 @@ class ItemGridWidget extends StatelessWidget {
                           ),
                       ],
                     ),
+                    SizedBox(height: 4),
                     Expanded(
                       child: Text(
                         item.description,
@@ -193,22 +234,15 @@ class ItemGridWidget extends StatelessWidget {
                 ),
               ),
             ),
-            // show hashtags if there are any allergies that a user chose to filter
-            // we can use variable List<String> allergyCodesChosen and Object sakura_breeze_allergy
-
-            buildHashTags(item, allergyCodesChosen),
-
-            // show price
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Align(
                 alignment: Alignment.bottomLeft,
                 child: Text(
-                  '${item.price.toStringAsFixed(0)}원',
+                  '${convertedPrice.toStringAsFixed(2)} $currencyCode',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    // text spacing
                     letterSpacing: -0.5,
                   ),
                 ),
@@ -221,151 +255,39 @@ class ItemGridWidget extends StatelessWidget {
   }
 }
 
-Map<String, String> sakuraBreezeAlergy = {
-  "1": "3, 6",
-  "2": "3, 6",
-  "3": "3, 10, 11",
-  "4": "3",
-  "5": "3, 4",
-  "6": "3, 6",
-  "7": "3, 10, 11",
-  "8": "3",
-  "9": "3",
-  "10": "3, 8, 10",
-  "11": "3, 10, 11",
-  "12": "10",
-  "13": "3, 5, 8",
-  "14": "3, 8",
-  "15": "6, 14",
-  "16": "6, 14",
-  "17": "6, 14",
-  "18": "3",
-  "19": "14",
-  "20": "14",
-  "21": "9",
-  "22": "6, 14",
-  "23": "3, 9",
-  "24": "3, 4, 7, 8, 9, 11",
-  "25": "3, 7, 8, 9",
-  "26": "3, 7, 8",
-  "27": "3, 7, 8",
-  "28": "3, 7, 8",
-  "29": "3, 7, 8",
-  "30": "14",
-  "31": "14",
-  "32": "14",
-  "33": "10, 11",
-  "34": "10, 11",
-  "35": "8, 15",
-  "36": "3, 5, 7, 8",
-  "37": "3, 5, 7, 8",
-  "38": "3, 5, 7, 8",
-  "39": "11",
-  "40": "3, 5, 7, 8",
-  "41": "5, 7, 8",
-  "42": "5",
-  "43": "11, 7, 8",
-  "44": "5, 7, 8",
-  "45": "3, 6, 7",
-  "46": "3, 6, 7",
-  "47": "3, 5, 6, 7",
-  "48": "11, 7, 8",
-  "49": "11, 7, 8",
-  "50": "3, 7, 8",
-  "51": "4",
-  "52": "4, 5",
-  "53": "4, 6",
-  "54": "4, 6, 7",
-  "55": "4, 10, 11, 7",
-  "56": "4, 11, 7, 8",
-  "57": "4, 11, 7, 8",
-  "58": "8, 15",
-  "59": "3, 6, 7, 8",
-  "60": "3, 6, 7, 8",
-  "61": "5, 7, 8",
-  "62": "5, 7, 8",
-  "63": "5, 7, 8",
-  "64": "3, 4, 5, 7, 8"
-};
-List<String> allergyNames = [
-  'Peanuts',
-  'Tree nuts',
-  'Milk',
-  'Eggs',
-  'Fish',
-  'Shellfish',
-  'Soy',
-  'Wheat',
-  'Sesame',
-  'Pork',
-  'Beef',
-  'Alcohol',
-  'Gelatin',
-  'Sulfites',
-  'Corn'
-];
-
-Widget hashTags(String itemId, List<dynamic> allergyCodesChosen) {
-  List<String> itemAllergyCodes = sakuraBreezeAlergy[itemId]?.split(', ') ?? [];
-  Set<String> commonAllergies = {};
-
-  for (String itemAllergyCode in itemAllergyCodes) {
-    for (var chosenAllergy in allergyCodesChosen) {
-      int index = int.parse(itemAllergyCode) - 1;
-      if (index >= 0 && index < allergyNames.length) {
-        if (chosenAllergy is int && itemAllergyCode == chosenAllergy.toString()) {
-          commonAllergies.add(allergyNames[index]);
-        } else if (chosenAllergy is String && allergyNames[index].toLowerCase() == chosenAllergy.toLowerCase()) {
-          commonAllergies.add(allergyNames[index]);
-        }
-      }
-    }
-  }
-
-  return Text(
-    commonAllergies.map((allergy) => '#$allergy').join(' '),
-    style: TextStyle(
-      fontSize: 14,
-      color: Colors.red,
-      fontWeight: FontWeight.bold,
-    ),
-  );
-}
-
-// Example usage:
-// Assuming you have a FoodItem class with an id property
-Widget buildHashTags(FoodItem item, List<dynamic> allergyCodesChosen) {
-  return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 8),
-    child: hashTags(item.id.toString(), allergyCodesChosen),
-  );
-}
-
 class ItemListWidget extends StatelessWidget {
   final FoodItem item;
   final String languageCode;
   final String restaurantId;
   final Image? receievedImage;
+  final double exchangeRate;
+  final String currencyCode;
 
-  ItemListWidget({required this.item, required this.languageCode, required this.restaurantId, this.receievedImage});
+  ItemListWidget({
+    required this.item,
+    required this.languageCode,
+    required this.restaurantId,
+    required this.exchangeRate,
+    required this.currencyCode,
+    this.receievedImage,
+  });
 
   @override
   Widget build(BuildContext context) {
+    double convertedPrice = item.price * exchangeRate;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: Card(
-        // no border radius
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.zero,
         ),
         child: ListTile(
-          // make the leading fit full size
           dense: true,
           contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 0),
           leading: Container(
             height: 170,
             child: Hero(
-              tag: 'restaurantId: ${restaurantId}, foodItemId: ${item.id}',
+              tag: 'restaurantId: $restaurantId, foodItemId: ${item.id}',
               child: receievedImage ?? Text('No Image'),
             ),
           ),
@@ -393,7 +315,7 @@ class ItemListWidget extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'Price: ${item.price.toStringAsFixed(2)} 원',
+                  'Price: ${convertedPrice.toStringAsFixed(2)} $currencyCode',
                   style: TextStyle(
                     fontSize: 14,
                   ),
