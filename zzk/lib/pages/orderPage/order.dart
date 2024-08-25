@@ -14,6 +14,7 @@ class _OrderPageState extends State<OrderPage> {
   ScrollController _scrollController = ScrollController();
   double _opacity = 1.0;
   String _language = 'Chinese';
+  bool isGridMode = true;
 
   @override
   void initState() {
@@ -42,6 +43,12 @@ class _OrderPageState extends State<OrderPage> {
   void _onLanguageChanged(String newLanguage) {
     setState(() {
       _language = newLanguage;
+    });
+  }
+
+  void _toggleViewMode() {
+    setState(() {
+      isGridMode = !isGridMode;
     });
   }
 
@@ -139,6 +146,9 @@ class _OrderPageState extends State<OrderPage> {
                     sections: snapshot.data.sections,
                     language: _language,
                     onLanguageChanged: _onLanguageChanged,
+                    isGridMode: isGridMode, // Pass the current state
+                    onToggleViewMode:
+                        _toggleViewMode, // Pass the toggle function
                   ),
                 ),
             ],
@@ -154,6 +164,8 @@ class OrderPageBody extends StatelessWidget {
   final String restaurantId;
   final String language;
   final Function(String) onLanguageChanged;
+  final bool isGridMode; // Change this line
+  final VoidCallback onToggleViewMode;
 
   OrderPageBody({
     Key? key,
@@ -161,6 +173,8 @@ class OrderPageBody extends StatelessWidget {
     required this.sections,
     required this.language,
     required this.onLanguageChanged,
+    required this.isGridMode, // Change this line
+    required this.onToggleViewMode,
   }) : super(key: key);
 
   final Map<String, String> languageCodeMap = {
@@ -176,61 +190,74 @@ class OrderPageBody extends StatelessWidget {
 
     return Column(
       children: [
-        Container(
-          alignment: Alignment.centerLeft,
+        Padding(
           padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.grey),
-              borderRadius: BorderRadius.circular(5),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text('Language: ',
-                    style:
-                        TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-                PopupMenuButton<String>(
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(language, style: TextStyle(fontSize: 16)),
-                        Icon(Icons.arrow_drop_down),
-                      ],
-                    ),
-                  ),
-                  itemBuilder: (BuildContext context) {
-                    return <PopupMenuEntry<String>>[
-                      for (String lang in [
-                        'English',
-                        'Korean',
-                        'Chinese',
-                        'Japanese'
-                      ])
-                        PopupMenuItem<String>(
-                          value: lang,
-                          child: Row(
-                            children: [
-                              Text(lang),
-                              if (lang == language)
-                                Padding(
-                                  padding: EdgeInsets.only(left: 8),
-                                  child: Icon(Icons.check, size: 18),
-                                ),
-                            ],
-                          ),
-                        ),
-                    ];
-                  },
-                  onSelected: (String value) {
-                    onLanguageChanged(value);
-                  },
+          child: Row(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey),
+                  borderRadius: BorderRadius.circular(5),
                 ),
-              ],
-            ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(left: 10),
+                      child: Text('Language: ',
+                          style: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold)),
+                    ),
+                    PopupMenuButton<String>(
+                      child: Padding(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(language, style: TextStyle(fontSize: 16)),
+                            SizedBox(width: 4),
+                            Icon(Icons.arrow_drop_down),
+                          ],
+                        ),
+                      ),
+                      itemBuilder: (BuildContext context) {
+                        return <PopupMenuEntry<String>>[
+                          for (String lang in [
+                            'English',
+                            'Korean',
+                            'Chinese',
+                            'Japanese'
+                          ])
+                            PopupMenuItem<String>(
+                              value: lang,
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(lang),
+                                  if (lang == language)
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 8),
+                                      child: Icon(Icons.check, size: 18),
+                                    ),
+                                ],
+                              ),
+                            ),
+                        ];
+                      },
+                      onSelected: (String value) {
+                        onLanguageChanged(value);
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              Spacer(),
+              IconButton(
+                icon: Icon(isGridMode ? Icons.grid_view : Icons.list),
+                onPressed: onToggleViewMode,
+              ),
+            ],
           ),
         ),
         Divider(
@@ -243,9 +270,11 @@ class OrderPageBody extends StatelessWidget {
           itemCount: sections.length,
           itemBuilder: (BuildContext context, int index) {
             return SectionWidget(
-                section: sections[index],
-                languageCode: languageCode,
-                restaurantId: restaurantId);
+              section: sections[index],
+              languageCode: languageCode,
+              restaurantId: restaurantId,
+              isGridMode: isGridMode,
+            );
           },
         ),
       ],
