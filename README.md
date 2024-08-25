@@ -1,4 +1,5 @@
 # Loupang Eats - Multilingual & Allergy-Sensitive Food Delivery App
+[Uploading 240824_pitchdeck.pdf…]()
 
 ## Overview
 
