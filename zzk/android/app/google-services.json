@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1000693899075",
+    "project_id": "hackseoul-50d56",
+    "storage_bucket": "hackseoul-50d56.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1000693899075:android:1d13649770dd163d3a59f6",
+        "android_client_info": {
+          "package_name": "com.hackseoul.zzk"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDX9JKzh9W6h9QxDJkUQiLlb5pEy1mUl_8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1000693899075:android:f2111e2aaa469c6b3a59f6",
+        "android_client_info": {
+          "package_name": "zzk.hackseoul.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDX9JKzh9W6h9QxDJkUQiLlb5pEy1mUl_8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

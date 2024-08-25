@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:zzk/clicky/clicky_flutter.dart';
 import '../../../classes/FoodSectionClass.dart';
+import '../../../clicky/styles.dart';
 import '../itemPage/item.dart';
 
 class SectionWidget extends StatelessWidget {
@@ -53,14 +55,20 @@ class SectionWidget extends StatelessWidget {
                 ),
                 itemCount: filteredItems.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return ItemGridWidget(
-                      restaurantId: restaurantId,
-                      item: filteredItems[index],
-                      languageCode: languageCode,
-                      receivedImage: Image.asset(
-                        'assets/images/${restaurantId}/${filteredItems[index].imageFileName}',
-                        fit: BoxFit.cover,
-                      ));
+                  return Clicky(
+                    style: ClickyStyle(
+                      color: Colors.transparent,
+                      shrinkScale: ShrinkScale.byRatio(0.04),
+                    ),
+                    child: ItemGridWidget(
+                        restaurantId: restaurantId,
+                        item: filteredItems[index],
+                        languageCode: languageCode,
+                        receivedImage: Image.asset(
+                          'assets/images/${restaurantId}/${filteredItems[index].imageFileName}',
+                          fit: BoxFit.cover,
+                        )),
+                  );
                 },
               )
             : ListView.builder(
