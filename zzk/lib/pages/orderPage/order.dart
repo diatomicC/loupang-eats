@@ -15,7 +15,8 @@ class _OrderPageState extends State<OrderPage> {
   ScrollController _scrollController = ScrollController();
   double _opacity = 1.0;
   String _language = 'Chinese';
-  bool isGridMode = true;
+  bool _isGridMode = false;
+  bool _isLoading = false;
 
   @override
   void initState() {
@@ -48,9 +49,15 @@ class _OrderPageState extends State<OrderPage> {
     });
   }
 
-  void _toggleViewMode() {
+  void _toggleViewMode() async {
     setState(() {
-      isGridMode = !isGridMode;
+      _isLoading = true;
+    });
+
+    await Future.delayed(Duration(seconds: 1));
+    setState(() {
+      _isGridMode = !_isGridMode;
+      _isLoading = false;
     });
   }
 
@@ -94,14 +101,17 @@ class _OrderPageState extends State<OrderPage> {
                                   child: Container(
                                     decoration: BoxDecoration(
                                       color: Color.lerp(
-                                        Theme.of(context).appBarTheme.backgroundColor,
+                                        Theme.of(context)
+                                            .appBarTheme
+                                            .backgroundColor,
                                         Colors.white,
                                         lerpDouble(0, 1, sqrt(_opacity))!,
                                       ),
                                       borderRadius: BorderRadius.circular(0),
                                       boxShadow: [
                                         BoxShadow(
-                                          color: Colors.black.withOpacity(0.5 * _opacity * _opacity),
+                                          color: Colors.black.withOpacity(
+                                              0.5 * _opacity * _opacity),
                                           spreadRadius: 5,
                                           blurRadius: 7,
                                           offset: Offset(0, 3),
@@ -128,13 +138,19 @@ class _OrderPageState extends State<OrderPage> {
                   ),
                 ),
               ),
-              if (snapshot.connectionState == ConnectionState.waiting)
+              if (_isLoading) // 로딩 중일 때 표시
                 SliverFillRemaining(
                   child: Center(
                     child: CircularProgressIndicator(),
                   ),
-                ),
-              if (snapshot.hasError)
+                )
+              else if (snapshot.connectionState == ConnectionState.waiting)
+                SliverFillRemaining(
+                  child: Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                )
+              else if (snapshot.hasError)
                 SliverFillRemaining(
                   child: Center(
                     child: Text('An error occurred while loading the menu.'),
@@ -147,8 +163,9 @@ class _OrderPageState extends State<OrderPage> {
                     sections: snapshot.data.sections,
                     language: _language,
                     onLanguageChanged: _onLanguageChanged,
-                    isGridMode: isGridMode, // Pass the current state
-                    onToggleViewMode: _toggleViewMode, // Pass the toggle function
+                    isGridMode: _isGridMode, // Pass the current state
+                    onToggleViewMode:
+                        _toggleViewMode, // Pass the toggle function
                   ),
                 ),
             ],
@@ -204,11 +221,14 @@ class OrderPageBody extends StatelessWidget {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(left: 10),
-                      child: Text('Language: ', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                      child: Text('Language: ',
+                          style: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold)),
                     ),
                     PopupMenuButton<String>(
                       child: Padding(
-                        padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                        padding:
+                            EdgeInsets.symmetric(vertical: 8, horizontal: 12),
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
@@ -220,7 +240,12 @@ class OrderPageBody extends StatelessWidget {
                       ),
                       itemBuilder: (BuildContext context) {
                         return <PopupMenuEntry<String>>[
-                          for (String lang in ['English', 'Korean', 'Chinese', 'Japanese'])
+                          for (String lang in [
+                            'English',
+                            'Korean',
+                            'Chinese',
+                            'Japanese'
+                          ])
                             PopupMenuItem<String>(
                               value: lang,
                               child: Row(
