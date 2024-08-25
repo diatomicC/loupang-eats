@@ -42,6 +42,10 @@ https://youtu.be/qjtAtooVffc
    ```bash
    cd zzk
    ```
+2a. Switch to the latest branch:
+   ```
+   git switch main2
+   ```
 3. Install the dependencies:
    ```bash
    flutter pub get
